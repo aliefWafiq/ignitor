@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap"
+    rel="stylesheet">
+  <style type="text/tailwindcss">
+    @layer utilities {
+        .slide {
+          @apply w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)];
+        }
+
+        .button {
+          @apply bg-[#FDC500] text-secondary px-5 py-3 rounded-2xl font-semibold;
+        } 
+
+        .idle_button {
+          @apply border-primary border-2 text-secondary px-5 py-3 rounded-2xl font-semibold;
+        }
+        
+        .button_sektor {
+          @apply p-4 w-5/6 hover:cursor-pointer rounded-lg hover:shadow-xl text-start flex items-center overflow-hidden;
+        }
+
+        .text_sektor {
+          @apply font-semibold text-xl text-slate-600 group-hover:text-black group-hover:bg-white;
+        }
+
+        .icon_sektor {
+          @apply rotate-90 text-white absolute group-hover:rotate-0 group-hover:text-black group-hover:translate-x-80 transition ease-in-out duration-500;
+        }
+
+        .industri {
+          @apply bg-primary text-white px-4 py-2 rounded-lg mr-2 mb-2;
+        }
+
+        .slide {
+            @apply w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)] py-6;
+        }
+    }
+    </style>
+</head>
+
+<body>
+  <header
+    class="w-full fixed font-semibold z-40 bg-opacity-50 backdrop-blur p-5 lg:px-32 flex justify-between items-center">
+    <h1 class="text-2xl lg:text-4xl">Ignitor</h1>
+    <ul class="flex items-center gap-2 lg:gap-5 text-base lg:text-xl">
+      <li>Home</li>
+      <li>About</li>
+      <li>Sign up</li>
+    </ul>
+  </header>
+
+  <section class="w-full h-screen flex items-center px-8 lg:px-32 z-40 text-black">
+    <div class="w-full h-full flex flex-col items-center pt-24 lg:pt-36 lg:pb-24">
+      <p class="text-center text-4xl lg:text-6xl font-bold lg:w-3/4">
+        Marketplace pendanaan untuk startup kompetitif.
+      </p>
+      <p class="text-center text-base lg:text-[28px] mt-6 lg:mt-12 lg:w-2/3">
+        Di sini, ide terbaik tidak perlu mencari. Biarkan investor pilihan datang dan bersaing untuk mendanai visi
+        besar
+        Anda.
+      </p>
+      <a href="#" class="button mt-16 w-48 text-center">Daftar Sekarang</a>
+      <div class="absolute w-full h-full top-0">
+        <!-- <div class="top-72 z-10 left-14 absolute bg-white border-2 border-black rounded-lg p-3 rotate-25 rotate-[25deg] ">
+          <p>Mudah digunakan</p>
+          <p>Lorem ipsum dolor</p>
+        </div> -->
+        <div class="lg:top-72 bottom-6 z-10 left-4 lg:left-14 absolute w-48 lg:w-72">
+          <img src="asset/bwink_ppl_12_single_04-removebg-preview.png" alt="">
+          <!-- https://www.freepik.com/free-vector/social-assistance-abstract-concept-vector-illustration-social-services-workers-low-income-care-about-seniors-volunteer-help-home-nursing-caregiver-support-disabled-person-abstract-metaphor_24122352.htm#fromView=search&page=2&position=42&uuid=cab153fe-3ce1-4d2d-97c6-6da6b0321508&query=black+and+white+Finance+illustration -->
+        </div>
+        <div class="bottom-16 z-10 left-96 absolute hidden lg:block w-44">
+          <img src="asset/5616692_1-removebg-preview (1).png" alt="">
+          <!-- https://www.freepik.com/free-vector/hand-drawn-business-people-illustration_15635336.htm#fromView=keyword&page=1&position=4&uuid=3a0175a2-be51-4a0a-b894-8afb3e9c1ffd&from_element=categories_trends&query=Corporate+illustration -->
+        </div>
+        <div class="bottom-5 z-10 right-6 lg:right-96 absolute w-44 lg:w-72">
+          <img src="asset/5616692-removebg-preview.png" alt="">
+          <!-- https://www.freepik.com/free-vector/hand-drawn-business-people-illustration_15635336.htm#fromView=keyword&page=1&position=4&uuid=3a0175a2-be51-4a0a-b894-8afb3e9c1ffd&from_element=categories_trends&query=Corporate+illustration -->
+        </div>
+        <div class="bottom-20 z-10 right-14 absolute hidden lg:block w-72">
+          <img src="asset/bwink_ppl_21_single_01-removebg-preview (1).png" alt="">
+          <!-- https://www.freepik.com/free-vector/social-assistance-abstract-concept-vector-illustration-social-services-workers-low-income-care-about-seniors-volunteer-help-home-nursing-caregiver-support-disabled-person-abstract-metaphor_24122352.htm#fromView=search&page=2&position=42&uuid=cab153fe-3ce1-4d2d-97c6-6da6b0321508&query=black+and+white+Finance+illustration -->
+        </div>
+        <img src="asset/Untitled_design__6_-removebg-preview.png" alt="" class="h-full w-full absolute top-0">
+      </div>
+    </div>
+  </section>
+
+  <section class="w-full flex items-center">
+    <div class="h-full w-full flex flex-col justify-center items-center px-8 lg:px-32 py-10">
+      <div class="shadow-lg w-full gap-y-10 lg:p-6 py-6 lg:flex lg:flex-row justify-center flex flex-col items-center">
+        <div class="text-center w-1/2">
+          <div class="flex items-center justify-center">
+            <h1 id="investor" class="text-4xl font-bold"></h1>
+            <span class="text-4xl font-bold">+</span>
+          </div>
+          <h1 class="text-xl">Investor</h1>
+        </div>
+        <div class="text-center w-1/2">
+          <div class="flex items-center justify-center">
+            <h1 id="investasi" class="text-4xl font-bold"></h1>
+            <span class="text-4xl font-bold"> M+</span>
+          </div>
+          <h1 class="text-xl">Investasi</h1>
+        </div>
+        <div class="text-center w-1/2">
+          <div class="flex items-center justify-center">
+            <h1 id="startUp" class="text-4xl font-bold"></h1>
+            <span class="text-4xl font-bold">+</span>
+          </div>
+          <h1 class="text-xl">Start Up</h1>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="w-full h-screen py-14 px-8 lg:px-32 space-y-8">
+    <div class="w-full h-full flex flex-col lg:flex-row justify-center items-center">
+      <div class="lg:w-1/2 w-full h-full flex items-center overflow-hidden">
+        <img src="asset/2150152265.jpg" alt="object-cover">
+        <!-- https://www.freepik.com/free-photo/colleagues-working-together-high-angle_37881220.htm#fromView=search&page=1&position=6&uuid=1cf98917-6a46-4e24-984f-9165e4e5d069&query=people+working -->
+      </div>
+      <div class="my-4 lg:mt-[16px] lg:text-lg w-full lg:w-2/3 lg:px-12">
+        <h1 class="text-3xl lg:text-5xl font-bold mb-4">Mendorong Pertumbuhan Start Up Dari Berbagai Sektor</h1>
+        <p>Kami percaya bahwa potensi besar tidak terbatas
+          pada
+          satu sektor. Oleh
+          karena
+          itu, kami
+          mendukung start up dari berbagai bidang dengan akses ke jaringan investor dan peluang kolaboratif yang
+          mendorong
+          inovasi berkelanjutan.
+        </p>
+        <div class="flex mt-6 flex-wrap">
+          <p class="industri">Teknologi</p>
+          <p class="industri">Pendidikan</p>
+          <p class="industri">Hiburan</p>
+          <p class="industri">Makanan</p>
+          <p class="industri">Sosial</p>
+          <p class="industri">Lingkungan</p>
+          <p class="industri">Energi</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="w-full h-screen lg:px-32 px-8 flex flex-col justify-center space-y-8">
+    <h1 class="text-3xl lg:text-5xl font-semibold">Popular Start Up</h1>
+    <div class="w-full flex gap-5 overflow-x-scroll">
+      <div class="lg:w-[300px] lg:h-[570px] w-[300px] h-[490px] flex-shrink-0">
+        <img src="asset/ntr/Desk setup.jpg" alt="" class="w-full h-2/4 object-cover rounded-t-lg">
+        <p class="mt-4 text-xl font-semibold">Lorem ipsum dolor sit.</p>
+        <p class="mt-6">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit reprehenderit deserunt inventore
+          perferendis, accusantium dolor tenetur voluptatibus. Aspernatur, autem temporibus!</p>
+        <div class="flex space-x-4 mt-8">
+          <p class="text-lg">Teknologi</p>
+          <p class="text-lg">Pendidikan</p>
+        </div>
+      </div>
+      <div class="lg:w-[300px] lg:h-[570px] w-[300px] h-[490px] flex-shrink-0">
+        <img src="asset/ntr/Desk setup.jpg" alt="" class="w-full h-2/4 object-cover rounded-t-lg">
+        <p class="mt-4 text-xl font-semibold">Lorem ipsum dolor sit.</p>
+        <p class="mt-6">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit reprehenderit deserunt inventore
+          perferendis, accusantium dolor tenetur voluptatibus. Aspernatur, autem temporibus!</p>
+        <div class="flex space-x-4 mt-8">
+          <p class="text-lg">Teknologi</p>
+          <p class="text-lg">Pendidikan</p>
+        </div>
+      </div>
+      <div class="lg:w-[300px] lg:h-[570px] w-[300px] h-[490px] flex-shrink-0">
+        <img src="asset/ntr/Desk setup.jpg" alt="" class="w-full h-2/4 object-cover rounded-t-lg">
+        <p class="mt-4 text-xl font-semibold">Lorem ipsum dolor sit.</p>
+        <p class="mt-6">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit reprehenderit deserunt inventore
+          perferendis, accusantium dolor tenetur voluptatibus. Aspernatur, autem temporibus!</p>
+        <div class="flex space-x-4 mt-8">
+          <p class="text-lg">Teknologi</p>
+          <p class="text-lg">Pendidikan</p>
+        </div>
+      </div>
+      <div class="lg:w-[300px] lg:h-[570px] w-[300px] h-[490px] flex-shrink-0">
+        <img src="asset/ntr/Desk setup.jpg" alt="" class="w-full h-2/4 object-cover rounded-t-lg">
+        <p class="mt-4 text-xl font-semibold">Lorem ipsum dolor sit.</p>
+        <p class="mt-6">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit reprehenderit deserunt inventore
+          perferendis, accusantium dolor tenetur voluptatibus. Aspernatur, autem temporibus!</p>
+        <div class="flex space-x-4 mt-8">
+          <p class="text-lg">Teknologi</p>
+          <p class="text-lg">Pendidikan</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="w-full h-screen px-8 lg:px-32 bg-slate-50">
+    <div class="w-full h-full flex flex-col items-center justify-center">
+      <div class="w-full mb-8 lg:mb-12 flex flex-col justify-center items-center text-center">
+        <h1 class="text-3xl lg:text-6xl font-bold mb-4 lg:w-1/2">Dipercaya oleh ribuan Start up dan Investor</h1>
+        <p class="lg:w-1/2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore beatae voluptates
+          tempora
+          dolorem itaque delectus nulla nihil quaerat quisquam quo!</p>
+      </div>
+      <div class="slide">
+        <ul class="flex items-center justify-center md:justify-start animate-infinite-scroll">
+          <li class="mx-4">
+            <div class="shadow-lg rounded-lg w-[350px] p-8 h-[300px] flex flex-col justify-between bg-white">
+              <div class="w-full">
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <p class="mt-8">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed id sunt esse harum
+                  adipisci, amet minus
+                  tempore eligendi! Hic, voluptas!</p>
+              </div>
+              <div class="w-full flex space-x-2 items-center">
+                <img src="asset/Yoona.jpeg" alt="" class="w-14 rounded-full">
+                <h1>Nama</h1>
+              </div>
+            </div>
+          </li>
+          <li class="mx-4">
+            <div class="shadow-lg rounded-lg w-[350px] p-8 h-[300px] flex flex-col justify-between bg-white">
+              <div class="w-full">
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <p class="mt-8">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed id sunt esse harum
+                  adipisci, amet minus
+                  tempore eligendi! Hic, voluptas!</p>
+              </div>
+              <div class="w-full flex space-x-2 items-center">
+                <img src="asset/Yoona.jpeg" alt="" class="w-14 rounded-full">
+                <h1>Nama</h1>
+              </div>
+            </div>
+          </li>
+          <li class="mx-4">
+            <div class="shadow-lg rounded-lg w-[350px] p-8 h-[300px] flex flex-col justify-between bg-white">
+              <div class="w-full">
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <p class="mt-8">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed id sunt esse harum
+                  adipisci, amet minus
+                  tempore eligendi! Hic, voluptas!</p>
+              </div>
+              <div class="w-full flex space-x-2 items-center">
+                <img src="asset/Yoona.jpeg" alt="" class="w-14 rounded-full">
+                <h1>Nama</h1>
+              </div>
+            </div>
+          </li>
+          <li class="mx-4">
+            <div class="shadow-lg rounded-lg w-[350px] p-8 h-[300px] flex flex-col justify-between bg-white">
+              <div class="w-full">
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <p class="mt-8">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed id sunt esse harum
+                  adipisci, amet minus
+                  tempore eligendi! Hic, voluptas!</p>
+              </div>
+              <div class="w-full flex space-x-2 items-center">
+                <img src="asset/Yoona.jpeg" alt="" class="w-14 rounded-full">
+                <h1>Nama</h1>
+              </div>
+            </div>
+          </li>
+          <li class="mx-4">
+            <div class="shadow-lg rounded-lg w-[350px] p-8 h-[300px] flex flex-col justify-between bg-white">
+              <div class="w-full">
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <p class="mt-8">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed id sunt esse harum
+                  adipisci, amet minus
+                  tempore eligendi! Hic, voluptas!</p>
+              </div>
+              <div class="w-full flex space-x-2 items-center">
+                <img src="asset/Yoona.jpeg" alt="" class="w-14 rounded-full">
+                <h1>Nama</h1>
+              </div>
+            </div>
+          </li>
+          <li class="mx-4">
+            <div class="shadow-lg rounded-lg w-[350px] p-8 h-[300px] flex flex-col justify-between bg-white">
+              <div class="w-full">
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <p class="mt-8">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed id sunt esse harum
+                  adipisci, amet minus
+                  tempore eligendi! Hic, voluptas!</p>
+              </div>
+              <div class="w-full flex space-x-2 items-center">
+                <img src="asset/Yoona.jpeg" alt="" class="w-14 rounded-full">
+                <h1>Nama</h1>
+              </div>
+            </div>
+          </li>
+          <li class="mx-4">
+            <div class="shadow-lg rounded-lg w-[350px] p-8 h-[300px] flex flex-col justify-between bg-white">
+              <div class="w-full">
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <p class="mt-8">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed id sunt esse harum
+                  adipisci, amet minus
+                  tempore eligendi! Hic, voluptas!</p>
+              </div>
+              <div class="w-full flex space-x-2 items-center">
+                <img src="asset/Yoona.jpeg" alt="" class="w-14 rounded-full">
+                <h1>Nama</h1>
+              </div>
+            </div>
+          </li>
+          <li class="mx-4">
+            <div class="shadow-lg rounded-lg w-[350px] p-8 h-[300px] flex flex-col justify-between bg-white">
+              <div class="w-full">
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <p class="mt-8">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed id sunt esse harum
+                  adipisci, amet minus
+                  tempore eligendi! Hic, voluptas!</p>
+              </div>
+              <div class="w-full flex space-x-2 items-center">
+                <img src="asset/Yoona.jpeg" alt="" class="w-14 rounded-full">
+                <h1>Nama</h1>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <ul class="flex items-center justify-center md:justify-start animate-infinite-scroll" aria-hidden="true">
+          <li class="mx-4">
+            <div class="shadow-lg rounded-lg w-[350px] p-8 h-[300px] flex flex-col justify-between bg-white">
+              <div class="w-full">
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <p class="mt-8">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed id sunt esse harum
+                  adipisci, amet minus
+                  tempore eligendi! Hic, voluptas!</p>
+              </div>
+              <div class="w-full flex space-x-2 items-center">
+                <img src="asset/Yoona.jpeg" alt="" class="w-14 rounded-full">
+                <h1>Nama</h1>
+              </div>
+            </div>
+          </li>
+          <li class="mx-4">
+            <div class="shadow-lg rounded-lg w-[350px] p-8 h-[300px] flex flex-col justify-between bg-white">
+              <div class="w-full">
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <p class="mt-8">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed id sunt esse harum
+                  adipisci, amet minus
+                  tempore eligendi! Hic, voluptas!</p>
+              </div>
+              <div class="w-full flex space-x-2 items-center">
+                <img src="asset/Yoona.jpeg" alt="" class="w-14 rounded-full">
+                <h1>Nama</h1>
+              </div>
+            </div>
+          </li>
+          <li class="mx-4">
+            <div class="shadow-lg rounded-lg w-[350px] p-8 h-[300px] flex flex-col justify-between bg-white">
+              <div class="w-full">
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <p class="mt-8">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed id sunt esse harum
+                  adipisci, amet minus
+                  tempore eligendi! Hic, voluptas!</p>
+              </div>
+              <div class="w-full flex space-x-2 items-center">
+                <img src="asset/Yoona.jpeg" alt="" class="w-14 rounded-full">
+                <h1>Nama</h1>
+              </div>
+            </div>
+          </li>
+          <li class="mx-4">
+            <div class="shadow-lg rounded-lg w-[350px] p-8 h-[300px] flex flex-col justify-between bg-white">
+              <div class="w-full">
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <p class="mt-8">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed id sunt esse harum
+                  adipisci, amet minus
+                  tempore eligendi! Hic, voluptas!</p>
+              </div>
+              <div class="w-full flex space-x-2 items-center">
+                <img src="asset/Yoona.jpeg" alt="" class="w-14 rounded-full">
+                <h1>Nama</h1>
+              </div>
+            </div>
+          </li>
+          <li class="mx-4">
+            <div class="shadow-lg rounded-lg w-[350px] p-8 h-[300px] flex flex-col justify-between bg-white">
+              <div class="w-full">
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <p class="mt-8">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed id sunt esse harum
+                  adipisci, amet minus
+                  tempore eligendi! Hic, voluptas!</p>
+              </div>
+              <div class="w-full flex space-x-2 items-center">
+                <img src="asset/Yoona.jpeg" alt="" class="w-14 rounded-full">
+                <h1>Nama</h1>
+              </div>
+            </div>
+          </li>
+          <li class="mx-4">
+            <div class="shadow-lg rounded-lg w-[350px] p-8 h-[300px] flex flex-col justify-between bg-white">
+              <div class="w-full">
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <p class="mt-8">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed id sunt esse harum
+                  adipisci, amet minus
+                  tempore eligendi! Hic, voluptas!</p>
+              </div>
+              <div class="w-full flex space-x-2 items-center">
+                <img src="asset/Yoona.jpeg" alt="" class="w-14 rounded-full">
+                <h1>Nama</h1>
+              </div>
+            </div>
+          </li>
+          <li class="mx-4">
+            <div class="shadow-lg rounded-lg w-[350px] p-8 h-[300px] flex flex-col justify-between bg-white">
+              <div class="w-full">
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <p class="mt-8">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed id sunt esse harum
+                  adipisci, amet minus
+                  tempore eligendi! Hic, voluptas!</p>
+              </div>
+              <div class="w-full flex space-x-2 items-center">
+                <img src="asset/Yoona.jpeg" alt="" class="w-14 rounded-full">
+                <h1>Nama</h1>
+              </div>
+            </div>
+          </li>
+          <li class="mx-4">
+            <div class="shadow-lg rounded-lg w-[350px] p-8 h-[300px] flex flex-col justify-between bg-white">
+              <div class="w-full">
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <p class="mt-8">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed id sunt esse harum
+                  adipisci, amet minus
+                  tempore eligendi! Hic, voluptas!</p>
+              </div>
+              <div class="w-full flex space-x-2 items-center">
+                <img src="asset/Yoona.jpeg" alt="" class="w-14 rounded-full">
+                <h1>Nama</h1>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="w-full h-screen lg:px-32 flex items-center border-t">
+    <div class="w-1/2 h-full lg:flex flex-col items-center justify-center hidden">
+      <div class="w-[250px] h-[100px] rounded-xl absolute bg-blue-400 -translate-y-64 -translate-x-32">
+      </div>
+      <div class="w-2/3 h-2/3 rounded-xl bg-red-400">
+      </div>
+      <div class="w-[250px] h-[250px] rounded-xl absolute bg-blue-400 translate-y-44 translate-x-32">
+      </div>
+    </div>
+    <div class="lg:w-1/2 w-full h-2/3 flex flex-col justify-center items-center px-8 lg:px-24">
+      <div class="flex mb-5 w-full">
+        <button id="btnInvestor" onclick="formInvestorClick()" class="button mr-5">Investor</button>
+        <button id="btnStartUp" onclick="formStartUpClick()" class="idle_button px-5">Start up</button>
+      </div>
+      <form id="formInvestor" class="h-full w-full block">
+        <div class="mb-6">
+          <label for="namaLengkap" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama
+            lengkap</label>
+          <input type="text" id="namaLengkap"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="john" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required />
+        </div>
+        <div class="mb-6">
+          <label for="phone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nomor hp</label>
+          <input type="tel" id="phone"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="08xxxxx" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required />
+        </div>
+        <div class="mb-6">
+          <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Alamat email</label>
+          <input type="email" id="email"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="john.doe@company.com" required />
+        </div>
+        <div class="mb-6">
+          <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
+          <input type="password" id="password"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="•••••••••" required />
+        </div>
+        <button type="submit"
+          class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+      </form>
+
+      <form id="formStartUp" class="h-full w-full hidden overflow-y-scroll">
+        <div class="mb-6">
+          <label for="namaStartUp" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama Start
+            Up</label>
+          <input type="text" id="namaStartUp"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="Start Up" required />
+        </div>
+        <div class="mb-6">
+          <label for="visiMisi" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Visi misi</label>
+          <input type="text" id="visiMisi"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="Visi Misi" required />
+        </div>
+        <div class="mb-6">
+          <label for="deskripsiStartUp" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Deskripsi
+            singkat start up</label>
+          <textarea type="text" id="deskripsiStartUp"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            required></textarea>
+        </div>
+        <div class="mb-6">
+          <label for="phone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nomor hp</label>
+          <input type="tel" id="phone"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="08xxxxx" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required />
+        </div>
+        <div class="mb-6">
+          <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Alamat email</label>
+          <input type="email" id="email"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="john.doe@company.com" required />
+        </div>
+        <div class="mb-6">
+          <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
+          <input type="password" id="password"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="•••••••••" required />
+        </div>
+        <button type="submit"
+          class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="w-full h-[440px] lg:h-[270px] bg-primary flex flex-col lg:flex-row lg:px-32 px-8 justify-center">
+    <div class="w-full flex">
+      <div class="w-5/6 h-full flex items-center justify-center lg:pl-14">
+        <div class="text-white space-y-4 h-2/4">
+          <h1 class="text-2xl font-bold">Ignitor</h1>
+          <p class="w-4/5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, ut.</p>
+          <h1 class="text-lg font-bold">Tim Skandal</h1>
+        </div>
+      </div>
+      <div class="flex-grow lg:w-fit h-full flex items-center gap-6">
+        <div class="text-white space-y-4 h-2/4 flex-grow">
+          <h1 class="text-xl font-bold">Link</h1>
+          <div class="flex flex-col space-y-1">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Sign Up</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-white h-full w-full lg:w-1/2 flex flex-col justify-center">
+      <h1 class="text-xl font-bold">Feedback</h1>
+      <p class="mb-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo, exercitationem?</p>
+      <form
+        class="flex rounded-lg w-6/7 lg:w-3/5 overflow-hidden bg-gray-50 border border-gray-300 text-gray-900 dark:bg-gray-700 dark:border-gray-600 mr-10">
+        <input type="email" id="email"
+          class="text-sm block w-3/4 p-2.5 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          placeholder="john.doe@company.com" required />
+        <button type="submit"
+          class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm flex-grow sm:w-auto px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Submit</button>
+      </form>
+    </div>
+  </footer>
+</body>
+
+</html>
+
+<script src="index.js"></script>
+<script src="https://kit.fontawesome.com/16d3d4b4e9.js" crossorigin="anonymous"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        animation: {
+          'infinite-scroll': 'infinite-scroll 80s linear infinite',
+        },
+        keyframes: {
+          'infinite-scroll': {
+            from: { transform: 'translateX(0)' },
+            to: { transform: 'translateX(-100%)' },
+          }
+        },
+        colors: {
+          'primary': '#00509D',
+          'secondary': '#00296B',
+          'third': '#FFD500',
+        },
+        fontFamily: {
+          customFont: ['"Figtree"', 'sans-serif']
+        }
+      },
+    },
+  }
+</script>

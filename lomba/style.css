@@ -1,0 +1,394 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 70px;
+  height: 100vh;
+  background-color: #0d47a1; /* warna biru sidebar */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar .logo {
+  font-size: 1rem;
+}
+
+.sidebar .nav-link {
+  color: white;
+  font-size: 1.3rem;
+  padding: 15px 0;
+}
+
+.sidebar .nav-link:hover {
+  background-color: #1565c0; /* biru lebih terang saat hover */
+  border-radius: 8px;
+  color: #ffeb3b; /* kuning saat hover */
+}
+.sidebar .nav-link {
+  color: white;
+  font-size: 1.3rem;
+  padding: 15px 0;
+  position: relative;
+  transition: transform 0.2s ease, color 0.3s ease;
+}
+
+.sidebar .nav-link:hover {
+  background-color: #1565c0;
+  border-radius: 8px;
+  color: #ffeb3b;
+}
+
+/* Efek saat aktif */
+.sidebar .nav-link.active {
+  transform: scale(1.2); /* membesar sedikit */
+}
+
+/* Strip kuning di kiri */
+.sidebar .nav-link.active::before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 60%;
+  background-color: #dbff3b;
+  border-radius: 2px;
+}
+
+
+/* list chat */
+.chat-container {
+  margin-left: 70px; /* biar nggak ketimpa sidebar */
+  width: 320px;      /* <--- atur lebar sidebar chat */
+  height: 100vh;
+  overflow-y: auto;
+  background-color: #f8f9fa;
+  border-right: 1px solid #ddd; /* opsional biar lebih rapi */
+}
+
+
+/* Favorites */
+.favorite-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+  box-shadow: 0 0 3px rgba(0,0,0,0.1);
+}
+
+/* Chat List */
+.chat-item {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.chat-item:hover {
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+
+.chat-info .fw-bold {
+  font-size: 0.95rem;
+}
+/*chat orng*/
+.chat-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* animasi halus */
+}
+.chat-item {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  border-radius: 10px;
+  position: relative; /* supaya z-index bisa jalan */
+}
+
+.chat-item:hover {
+  background-color: #e3f2fd;
+  transform: scale(1.03);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.chat-item.active {
+  background-color: #d1e7dd;      /* hijau muda */
+  transform: scale(1.06);         /* lebih besar */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25); 
+  z-index: 10;                    /* timbul di atas item lain */
+}
+
+
+
+.container-fluid.vh-100.bg-light {
+  display: flex;
+  flex-direction: row;   /* bikin sejajar horizontal */
+  align-items: stretch;  /* tinggi ikut penuh */
+  padding: 0;
+  margin: 0;
+}
+
+/* Sidebar list chat */
+.chat-container {
+  flex: 0 0 300px;        /* lebar fix sidebar */
+  background: #fff;
+  border-right: 1px solid #ddd;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+/* Chat box (isi chat) */
+.chat-box {
+  flex: 1;                /* ambil sisa layar */
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #fafafa;
+}
+.main-chat {
+  height: 100vh; /* full tinggi layar */
+}
+
+.chat-container {
+  width: 300px; /* lebar list */
+  border-right: 1px solid #ddd;
+  overflow-y: auto;
+}
+
+.chat-box {
+  background: #fff;
+}
+/* Avatar */
+.chat-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Wrapper tiap pesan */
+.chat-message {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 15px;
+}
+
+/* Incoming (kiri) */
+.chat-message.incoming {
+  justify-content: flex-start;
+}
+
+/* Outgoing (kanan) */
+.chat-message.outgoing {
+  justify-content: flex-end;
+}
+
+/* Bubble */
+.chat-bubble {
+  max-width: 70%;
+  padding: 10px 14px;
+  border-radius: 18px;
+  font-size: 14px;
+  position: relative;
+}
+
+/* Warna bubble */
+.incoming .chat-bubble {
+  background: #f1f1f1;
+  margin-left: 8px;
+}
+
+.outgoing .chat-bubble {
+  background: #0d6efd;
+  color: #fff;
+  margin-right: 8px;
+}
+
+/* Waktu pesan */
+.chat-time {
+  display: block;
+  font-size: 11px;
+  color: #888;
+  margin-top: 4px;
+  text-align: right;
+}
+.chat-input {
+  margin-top: 100px; 
+}
+
+/* Bio Panel */
+.bio-panel {
+  width: 280px;
+  background: #fff;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.bio-panel h6 {
+  font-size: 0.95rem;
+}
+
+.bio-panel ul li {
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.bio-panel ul li:hover {
+  color: #0d6efd;
+}
+/* Chat section (Chat Box + Bio Panel) */
+.chat-section {
+  display: flex;
+  flex: 1;
+  height: 100vh;
+}
+
+/* Chat box */
+.chat-box {
+  flex: 1;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-messages {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.chat-input {
+  border-top: 1px solid #ddd;
+  padding: 0.75rem;
+  display: flex;
+  gap: 10px;
+}
+
+.chat-input input {
+  flex: 1;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+}
+
+/* Bio Panel */
+.bio-panel {
+  width: 280px;
+  background: #fff;
+  border-left: 1px solid #ddd;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+.bio-panel h6 {
+  font-size: 0.95rem;
+}
+
+.bio-panel ul li {
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.bio-panel ul li:hover {
+  color: #0d6efd;
+}
+/* Pesan */
+.chat-message {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 10px;
+  gap: 8px;
+}
+
+.chat-message img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Bubble umum */
+.bubble {
+  max-width: 65%;
+  padding: 8px 12px;
+  border-radius: 12px;
+  position: relative;
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+/* Teks chat */
+.bubble .text {
+  line-height: 1.3;
+}
+
+/* Jam pesan */
+.bubble .time {
+  font-size: 0.7rem;
+  color: #666;
+  align-self: flex-end;
+}
+
+/* Chat dari orang lain */
+.chat-message.other .bubble {
+  background: #f1f0f0;
+  color: #000;
+  border-top-left-radius: 0;
+}
+
+/* Chat dari kamu */
+.chat-message.me {
+  justify-content: flex-end;
+}
+
+.chat-message.me .bubble {
+  background: #0d6efd;
+  color: #fff;
+  border-top-right-radius: 0;
+}
+
+.chat-message.me .time {
+  color: rgba(255,255,255,0.7);
+}
+/* Header Chat */
+.chat-header {
+  background: #fff;
+}
+
+.chat-header-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+/* Shared Files Section */
+.bio-panel h6 {
+  margin-top: 2rem;   /* jarak atas */
+  margin-bottom: 1rem;  /* jarak bawah */
+}
+
+.bio-panel ul {
+  margin-bottom: 1rem; /* jarak bawah sebelum tombol */
+}
+
+.bio-panel ul li {
+  padding: 6px 0;       /* jarak antar item */
+}
