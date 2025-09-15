@@ -17,8 +17,9 @@
     <!-- Wrapper utama -->
     <div class="main-chat d-flex">
         <!-- Sidebar -->
-        <div class="sidebar d-flex flex-column align-items-center">
-            <div class="logo text-white fw-bold py-3">Ignitor</div>
+        <div class="sidebar d-lg-flex flex-column align-items-center d-none d-lg-block chatContainer"
+            style="z-index: 20;">
+            <div class="logo text-white fw-bold py-3 d-none d-lg-block">Ignitor</div>
             <ul class="nav flex-column text-center mt-3">
                 <li class="nav-item">
                     <a href="#" class="nav-link"><i class="bi bi-person-fill"></i></a>
@@ -44,7 +45,7 @@
         <!-- Container untuk Chat List + Chat Box -->
         <div class="chat-layout d-flex flex-grow-1">
             <!-- Chat List -->
-            <div class="chat-container">
+            <div class="chatContainer chat-container d-none d-lg-block" style="z-index: 20;">
                 <!-- Search -->
                 <div class="p-3">
                     <input type="text" class="form-control rounded-pill" placeholder="Search here">
@@ -66,86 +67,86 @@
                 <div class="px-3">
                     <h6 class="text-muted">My Chat List</h6>
 
-                    <div class="chat-item d-flex align-items-center">
+                    <a href="chatPerusahaan.html" class="chat-item d-flex align-items-center">
                         <img src="img/profile1.png" class="chat-img" alt="">
                         <div class="chat-info flex-grow-1">
                             <div class="fw-bold">Perusahaan A</div>
                             <small class="text-muted">How are you Abbas?</small>
                         </div>
                         <small class="text-muted">20 Min</small>
-                    </div>
+                    </a>
 
-                    <div class="chat-item d-flex align-items-center">
+                    <a href="chatPerusahaan.html" class="chat-item d-flex align-items-center">
                         <img src="img/profile2.png" class="chat-img" alt="">
                         <div class="chat-info flex-grow-1">
                             <div class="fw-bold">Perusahaan B</div>
                             <small class="text-muted">Ok Abdulla I will see</small>
                         </div>
                         <small class="text-muted">1.30 Min</small>
-                    </div>
+                    </a>
 
-                    <div class="chat-item d-flex align-items-center">
+                    <a href="chatPerusahaan.html" class="chat-item d-flex align-items-center">
                         <img src="img/profile3.png" class="chat-img" alt="">
                         <div class="chat-info flex-grow-1">
                             <div class="fw-bold">Perusahaan C</div>
                             <small class="text-muted">When we will meet</small>
                         </div>
                         <small class="text-muted">Yesterday</small>
-                    </div>
+                    </a>
 
-                    <div class="chat-item d-flex align-items-center">
+                    <a href="chatPerusahaan.html" class="chat-item d-flex align-items-center">
                         <img src="img/profile4.png" class="chat-img" alt="">
                         <div class="chat-info flex-grow-1">
                             <div class="fw-bold">Perusahaan D</div>
                             <small class="text-muted">I will meet abdulla</small>
                         </div>
                         <small class="text-muted">Monday</small>
-                    </div>
+                    </a>
 
-                    <div class="chat-item d-flex align-items-center">
+                    <a href="chatPerusahaan.html" class="chat-item d-flex align-items-center">
                         <img src="img/profile5.png" class="chat-img" alt="">
                         <div class="chat-info flex-grow-1">
                             <div class="fw-bold">Perusahaan E</div>
                             <small class="text-muted">How are you Abbas?</small>
                         </div>
                         <small class="text-muted">2 Feb</small>
-                    </div>
+                    </a>
 
-                    <div class="chat-item d-flex align-items-center">
+                    <a href="chatPerusahaan.html" class="chat-item d-flex align-items-center">
                         <img src="img/profile6.png" class="chat-img" alt="">
                         <div class="chat-info flex-grow-1">
                             <div class="fw-bold">Perusahaan F</div>
                             <small class="text-muted">Sample text here</small>
                         </div>
                         <small class="text-muted">Yesterday</small>
-                    </div>
+                    </a>
 
-                    <div class="chat-item d-flex align-items-center">
+                    <a href="chatPerusahaan.html" class="chat-item d-flex align-items-center">
                         <img src="img/profile7.png" class="chat-img" alt="">
                         <div class="chat-info flex-grow-1">
                             <div class="fw-bold">Perusahaan G</div>
                             <small class="text-muted">Sample text here</small>
                         </div>
                         <small class="text-muted">26 Dec</small>
-                    </div>
+                    </a>
 
-                    <div class="chat-item d-flex align-items-center">
+                    <a href="chatPerusahaan.html" class="chat-item d-flex align-items-center">
                         <img src="img/profile8.png" class="chat-img" alt="">
                         <div class="chat-info flex-grow-1">
                             <div class="fw-bold">Perusahaan H</div>
                             <small class="text-muted">I will meet abdulla</small>
                         </div>
                         <small class="text-muted">Yesterday</small>
-                    </div>
+                    </a>
 
-                    <div class="chat-item d-flex align-items-center">
+                    <a href="chatPerusahaan.html" class="chat-item d-flex align-items-center">
                         <img src="img/profile9.png" class="chat-img" alt="">
                         <div class="chat-info flex-grow-1">
                             <div class="fw-bold">Perusahaan I</div>
                             <small class="text-muted">I will meet abdulla</small>
                         </div>
                         <small class="text-muted">1 Jan</small>
-                    </div>
+                    </a>
                 </div>
             </div>
 
@@ -165,11 +166,16 @@
 
                         <!-- Aksi kanan -->
                         <div class="d-flex gap-3 align-items-center">
-                            <i class="bi bi-telephone fs-5 text-primary"></i>
-                            <i class="bi bi-camera-video fs-5 text-primary"></i>
+                            <!-- <i class="bi bi-telephone fs-5 text-primary"></i>
+                            <i class="bi bi-camera-video fs-5 text-primary"></i> -->
                             <!-- Tombol toggle bio panel (untuk HP) -->
-                            <button id="toggleBio" class="btn btn-sm btn-outline-primary d-md-none">
+                            <button id="toggleBio" onclick="showBioPanel()"
+                                class="btn btn-sm btn-outline-primary d-md-none">
                                 <i class="bi bi-info-circle"></i>
+                            </button>
+                            <button id="toggleChatList" onclick="showChatList()"
+                                class="btn btn-sm btn-outline-primary d-md-none">
+                                <i class="bi bi-chat-right-text"></i>
                             </button>
                         </div>
                     </div>
@@ -212,7 +218,7 @@
                 </div>
 
                 <!-- Bio Panel -->
-                <div class="bio-panel">
+                <div class="bio-panel d-none d-lg-block" id="bioPanel">
                     <!-- Profil -->
                     <div class="text-center mb-4">
                         <img src="img/profile4.png" alt="Profile" class="rounded-circle mb-2"
