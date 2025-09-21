@@ -5,6 +5,12 @@ let btnStartUp = document.getElementById('btnStartUp')
 let formInvestor = document.getElementById('formInvestor')
 let formStartUp = document.getElementById('formStartUp')
 
+let btnRegis = document.getElementById('btnRegis')
+let btnLogin = document.getElementById('btnLogin')
+
+let formRegis = document.getElementById('formRegis')
+let formLogin = document.getElementById('formLogin')
+
 let investor;
 let investasi;
 let startUp;
@@ -101,6 +107,22 @@ function formStartUpClick(){
 
     formInvestor.classList.replace('block', 'hidden')
     formStartUp.classList.replace('hidden', 'block')
+}
+
+function registrasi(){
+    btnRegis.classList.replace('block', 'hidden')
+    btnLogin.classList.replace('hidden', 'block')
+
+    formLogin.classList.replace('block', 'hidden')
+    formRegis.classList.replace('hidden', 'block')
+}
+
+function login(){
+    btnRegis.classList.replace('hidden', 'block')
+    btnLogin.classList.replace('block', 'hidden')
+
+    formLogin.classList.replace('hidden', 'block')
+    formRegis.classList.replace('block', 'hidden')
 }
 
 document.addEventListener('DOMContentLoaded', () => {

@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body class="min-h-screen flex items-center justify-center bg-gradient-to-r">
+
+  <div class="w-full max-w-md bg-white shadow-2xl rounded-2xl p-8">
+    <!-- Judul -->
+    <!-- ubah value pas login sama regis nya berubah untuk heading dan subheading  -->
+    <h2 class="text-3xl font-bold text-center text-blue-600 mb-6">Welcome Back</h2>
+    <p class="text-center text-gray-500 mb-8">Login to continue</p>
+
+    <!-- Form -->
+    <form action="#" id="formLogin" method="POST" class="space-y-5 block">
+      <!-- Username -->
+      <div>
+        <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
+        <input type="text" id="username" name="username" required
+          class="mt-1 w-full rounded-lg border-gray-300 shadow-lg focus:border-blue-500 focus:ring focus:ring-blue-200 p-3">
+      </div>
+
+      <!-- Email -->
+      <div>
+        <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+        <input type="email" id="email" name="email" required
+          class="mt-1 w-full rounded-lg border-gray-300 shadow-lg focus:border-blue-500 focus:ring focus:ring-blue-200 p-3">
+      </div>
+
+      <!-- Password -->
+      <div>
+        <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+        <input type="password" id="password" name="password" required
+          class="mt-1 w-full rounded-lg border-gray-300 shadow-lg focus:border-blue-500 focus:ring focus:ring-blue-200 p-3">
+      </div>
+
+      <!-- Remember Me + Forgot -->
+      <div class="flex items-center justify-between text-sm">
+        <label class="flex items-center">
+          <input type="checkbox" class="rounded border border-gray-300 text-blue-600 focus:ring-blue-500">
+          <span class="ml-2 text-gray-600">Remember me</span>
+        </label>
+        <a href="#" class="text-blue-600 hover:underline">Forgot password?</a>
+      </div>
+
+      <!-- Tombol Login -->
+      <button type="submit"
+        class="w-full bg-blue-800 text-white py-3 px-4 rounded-lg font-medium hover:bg-blue-600 transition duration-300">
+        Login
+      </button>
+    </form>
+
+    <!-- tambahin regis jadi investor atau start up -->
+    <form action="#" id="formRegis" method="POST" class="space-y-5 hidden">
+      <!-- Username -->
+      <div>
+        <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
+        <input type="text" id="username" name="username" required
+          class="mt-1 w-full rounded-lg border-gray-300 shadow-lg focus:border-blue-500 focus:ring focus:ring-blue-200 p-3">
+      </div>
+
+      <!-- Email -->
+      <div>
+        <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+        <input type="email" id="email" name="email" required
+          class="mt-1 w-full rounded-lg border-gray-300 shadow-lg focus:border-blue-500 focus:ring focus:ring-blue-200 p-3">
+      </div>
+
+      <!-- Password -->
+      <div>
+        <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+        <input type="password" id="password" name="password" required
+          class="mt-1 w-full rounded-lg border-gray-300 shadow-lg focus:border-blue-500 focus:ring focus:ring-blue-200 p-3">
+      </div>
+
+      <div>
+        <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+        <input type="password" id="password" name="password" required
+          class="mt-1 w-full rounded-lg border-gray-300 shadow-lg focus:border-blue-500 focus:ring focus:ring-blue-200 p-3">
+      </div>
+
+      <!-- Remember Me + Forgot -->
+      <div class="flex items-center justify-between text-sm">
+        <label class="flex items-center">
+          <input type="checkbox" class="rounded border border-gray-300 text-blue-600 focus:ring-blue-500">
+          <span class="ml-2 text-gray-600">Remember me</span>
+        </label>
+        <a href="#" class="text-blue-600 hover:underline">Forgot password?</a>
+      </div>
+
+      <!-- Tombol Login -->
+      <button type="submit"
+        class="w-full bg-blue-800 text-white py-3 px-4 rounded-lg font-medium hover:bg-blue-600 transition duration-300">
+        Login
+      </button>
+    </form>
+
+    <!-- Link Register -->
+    <p id="btnRegis" class="text-center text-gray-600 mt-6 block">
+      Don’t have an account?
+      <button onclick="registrasi()" class="text-blue-600 font-medium hover:underline">Register</button>
+    </p>
+    <p id="btnLogin" class="text-center text-gray-600 mt-6 hidden">
+      Already have an account?
+      <button onclick="login()" class="text-blue-600 font-medium hover:underline">Login</button>
+    </p>
+  </div>
+
+</body>
+
+</html>
+<script src="script.js"></script>
