@@ -8,8 +8,13 @@ let formStartUp = document.getElementById('formStartUp')
 let btnRegis = document.getElementById('btnRegis')
 let btnLogin = document.getElementById('btnLogin')
 
+let btnLanjut = document.getElementById('btnLanjut')
+
 let formRegis = document.getElementById('formRegis')
 let formLogin = document.getElementById('formLogin')
+
+let headingForm = document.getElementById('headingForm')
+let subHeadingForm = document.getElementById('subHeadingForm')
 
 let investor;
 let investasi;
@@ -109,21 +114,104 @@ function formStartUpClick(){
     formStartUp.classList.replace('hidden', 'block')
 }
 
-function registrasi(){
+btnRegis.addEventListener('click', function(){
+    headingForm.innerText = "Create your account"
+    subHeadingForm.innerText = "Please fill in the form to continue"
+
     btnRegis.classList.replace('block', 'hidden')
     btnLogin.classList.replace('hidden', 'block')
 
     formLogin.classList.replace('block', 'hidden')
     formRegis.classList.replace('hidden', 'block')
-}
+})
 
-function login(){
+btnLogin.addEventListener('click', function(){
+    headingForm.innerText = "Welcome back!"
+    subHeadingForm.innerText = "Please login to continue"
+
     btnRegis.classList.replace('hidden', 'block')
     btnLogin.classList.replace('block', 'hidden')
 
     formLogin.classList.replace('hidden', 'block')
     formRegis.classList.replace('block', 'hidden')
-}
+})
+
+document.addEventListener('DOMContentLoaded', () => {
+  const roleSelect = document.getElementById('role');
+  const dynamicFields = document.getElementById('dynamicFields');
+  const btnLanjut = document.getElementById('btnLanjut');
+  const roleSelection = document.getElementById('role-selection');
+
+  const formFields = {
+      investor: [
+        { label: 'Full Name', type: 'text', name: 'fullname', placeholder: 'Enter your full name' },
+        { label: 'Company Name', type: 'text', name: 'company', placeholder: 'Your company name' },
+        { label: 'Email', type: 'email', name: 'email', placeholder: 'you@example.com' },
+        { label: 'Password', type: 'password', name: 'password', placeholder: '••••••••' }
+      ],
+    startup: [
+        { label: 'Startup Name', type: 'text', name: 'startup_name', placeholder: 'Your startup name' },
+        { label: 'Founder Name', type: 'text', name: 'founder_name', placeholder: 'Enter founder name' },
+        { label: 'Email', type: 'email', name: 'email', placeholder: 'contact@startup.com' },
+        { label: 'Password', type: 'password', name: 'password', placeholder: '••••••••' }
+    ]
+  }
+
+  function createFields(field){
+    const fieldWrapper = document.createElement('div')
+    const label = document.createElement('label')
+    label.setAttribute('for', field.name)
+    label.classList.add('block', 'text-sm', 'font-medium', 'text-gray-700', 'mt-4')
+    label.textContent = field.label
+
+    const input = document.createElement('input')
+    input.type = field.type
+    input.name = field.name
+    input.id = field.id
+    input.placeholder = field.placeholder
+    input.required = true
+    input.className = 'mt-1 w-full rounded-lg border-gray-300 shadow-lg focus:border-blue-500 focus:ring focus:ring-blue-200 p-3'
+
+    fieldWrapper.appendChild(label)
+    fieldWrapper.appendChild(input)
+    dynamicFields.appendChild(fieldWrapper)
+  }
+
+  function createSubmitButton(){
+    const button = document.createElement('button')
+    button.type = 'submit'
+    button.className = 'w-full bg-blue-800 text-white py-3 px-4 rounded-lg font-medium hover:bg-blue-600 transition duration-300 mt-8'
+    button.textContent = 'Register'
+    return button
+  }
+
+  btnLanjut.addEventListener('click', (event) => {
+    event.preventDefault(); 
+    const selectedRole = roleSelect.value
+
+    if(!selectedRole) {
+      alert('Please select a role to continue.')
+      return
+    }
+    // INI DIPERBAIKI BUG NYA GK MUNCUL FORM WAKTU  UDAH ISI
+
+    dynamicFields.innerHTML = ''
+
+    if(formFields[selectedRole]){
+      const fields = formFields[selectedRole]
+
+      fields.forEach(field => {
+        const inputField = createFields(field)
+        dynamicFields.appendChild(inputField)
+      })
+
+      const submitButton = createSubmitButton()
+      dynamicFields.appendChild(submitButton)
+
+      roleSelection.style.display = 'none'
+    }
+  })
+})
 
 document.addEventListener('DOMContentLoaded', () => {
     const buttons = [
