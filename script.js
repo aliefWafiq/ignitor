@@ -75,7 +75,7 @@ window.addEventListener("scroll", () => {
 });
 
 function countInvestor() {
-    let count = document.getElementById("investor");
+    let count = document.getElementById("countInvestor");
     count.innerHTML = ++uptoInvestor;
     if (uptoInvestor === 25000) {
         clearInterval(Investor);
@@ -91,7 +91,7 @@ function countInvestasi() {
 }
 
 function countStartUp() {
-    let count = document.getElementById("startUp");
+    let count = document.getElementById("countStartUp");
     count.innerHTML = ++uptoStartUp;
     if (uptoStartUp === 20000) {
         clearInterval(StartUp);
@@ -138,80 +138,45 @@ btnLogin.addEventListener('click', function(){
 
 document.addEventListener('DOMContentLoaded', () => {
   const roleSelect = document.getElementById('role');
-  const dynamicFields = document.getElementById('dynamicFields');
+  const dynamicFields = document.getElementById('dynamic-fields');
   const btnLanjut = document.getElementById('btnLanjut');
   const roleSelection = document.getElementById('role-selection');
 
-  const formFields = {
-      investor: [
-        { label: 'Full Name', type: 'text', name: 'fullname', placeholder: 'Enter your full name' },
-        { label: 'Company Name', type: 'text', name: 'company', placeholder: 'Your company name' },
-        { label: 'Email', type: 'email', name: 'email', placeholder: 'you@example.com' },
-        { label: 'Password', type: 'password', name: 'password', placeholder: '••••••••' }
-      ],
-    startup: [
-        { label: 'Startup Name', type: 'text', name: 'startup_name', placeholder: 'Your startup name' },
-        { label: 'Founder Name', type: 'text', name: 'founder_name', placeholder: 'Enter founder name' },
-        { label: 'Email', type: 'email', name: 'email', placeholder: 'contact@startup.com' },
-        { label: 'Password', type: 'password', name: 'password', placeholder: '••••••••' }
-    ]
-  }
-
-  function createFields(field){
-    const fieldWrapper = document.createElement('div')
-    const label = document.createElement('label')
-    label.setAttribute('for', field.name)
-    label.classList.add('block', 'text-sm', 'font-medium', 'text-gray-700', 'mt-4')
-    label.textContent = field.label
-
-    const input = document.createElement('input')
-    input.type = field.type
-    input.name = field.name
-    input.id = field.id
-    input.placeholder = field.placeholder
-    input.required = true
-    input.className = 'mt-1 w-full rounded-lg border-gray-300 shadow-lg focus:border-blue-500 focus:ring focus:ring-blue-200 p-3'
-
-    fieldWrapper.appendChild(label)
-    fieldWrapper.appendChild(input)
-    dynamicFields.appendChild(fieldWrapper)
-  }
-
-  function createSubmitButton(){
-    const button = document.createElement('button')
-    button.type = 'submit'
-    button.className = 'w-full bg-blue-800 text-white py-3 px-4 rounded-lg font-medium hover:bg-blue-600 transition duration-300 mt-8'
-    button.textContent = 'Register'
-    return button
+  function createSubmitButton() {
+    const button = document.createElement('button');
+    button.type = 'submit';
+    button.className = 'w-full bg-blue-800 text-white py-3 px-4 rounded-lg font-medium hover:bg-blue-600 transition duration-300 mt-8';
+    button.textContent = 'Register';
+    return button;
   }
 
   btnLanjut.addEventListener('click', (event) => {
     event.preventDefault(); 
-    const selectedRole = roleSelect.value
 
-    if(!selectedRole) {
-      alert('Please select a role to continue.')
-      return
+    const selectedRole = roleSelect.value;
+
+    if (!selectedRole) {
+      alert('Please select a role to continue.');
+      return; 
     }
-    // INI DIPERBAIKI BUG NYA GK MUNCUL FORM WAKTU  UDAH ISI
 
-    dynamicFields.innerHTML = ''
+    const templateId = selectedRole;
+    const template = document.getElementById(templateId);
 
-    if(formFields[selectedRole]){
-      const fields = formFields[selectedRole]
+    if (template) {
+      const clone = template.content.cloneNode(true);
 
-      fields.forEach(field => {
-        const inputField = createFields(field)
-        dynamicFields.appendChild(inputField)
-      })
+      dynamicFields.appendChild(clone);
 
-      const submitButton = createSubmitButton()
-      dynamicFields.appendChild(submitButton)
+      const submitButton = createSubmitButton();
+      dynamicFields.appendChild(submitButton);
 
-      roleSelection.style.display = 'none'
+      roleSelection.style.display = 'none';
+    } else {
+      console.error('Template not found for role:', selectedRole);
     }
-  })
-})
+  });
+});
 
 document.addEventListener('DOMContentLoaded', () => {
     const buttons = [

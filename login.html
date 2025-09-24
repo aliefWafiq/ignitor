@@ -12,7 +12,7 @@
     rel="stylesheet">
 </head>
 
-<body class="min-h-screen flex items-center justify-center bg-gradient-to-r">
+<body class="min-h-screen flex items-center justify-center bg-gradient-to-r py-12">
 
   <div class="w-full max-w-md bg-white shadow-2xl rounded-2xl p-8">
     <!-- Judul -->
@@ -75,24 +75,84 @@
           Continue
         </button>
       </div>
-      <div class="space-y-5 hidden" id="isiData">
+      <div class="space-y-5" id="isiData">
 
-        <div id="dynamic-fields" class="space-y-5 mt-5"></div>
-
-        <!-- Remember Me + Forgot -->
-        <div class="flex items-center justify-between text-sm">
-          <label class="flex items-center">
-            <input type="checkbox" class="rounded border border-gray-300 text-blue-600 focus:ring-blue-500">
-            <span class="ml-2 text-gray-600">Remember me</span>
-          </label>
-          <a href="#" class="text-blue-600 hover:underline">Forgot password?</a>
+        <div id="dynamic-fields" class="space-y-5 mt-5">
         </div>
+        <template id="investor">
+          <div>
+            <label for="fullname" class="block text-sm font-medium text-gray-700 mt-4">Full Name</label>
+            <input type="text" name="fullname" id="fullname" placeholder="Enter your full name" required
+              class="mt-1 w-full rounded-lg border-gray-300 shadow-lg p-3">
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-700 mt-4">Email</label>
+            <input type="email" name="email" id="email" placeholder="Your Email" required
+              class="mt-1 w-full rounded-lg border-gray-300 shadow-lg p-3">
+          </div>
+          <div>
+            <label for="password" class="block text-sm font-medium text-gray-700 mt-4">Password</label>
+            <input type="password" name="password" id="password" placeholder="Your Password" required
+              class="mt-1 w-full rounded-lg border-gray-300 shadow-lg p-3">
+          </div>
+          <!-- Remember Me + Forgot -->
+          <div class="flex items-center justify-between text-sm">
+            <label class="flex items-center">
+              <input type="checkbox" class="rounded border border-gray-300 text-blue-600 focus:ring-blue-500">
+              <span class="ml-2 text-gray-600">Remember me</span>
+            </label>
+            <a href="#" class="text-blue-600 hover:underline">Forgot password?</a>
+          </div>
+        </template>
 
-        <!-- Tombol Login -->
-        <button type="submit"
-          class="w-full bg-blue-800 text-white py-3 px-4 rounded-lg font-medium hover:bg-blue-600 transition duration-300">
-          Login
-        </button>
+        <template id="startup">
+          <div class="w-full">
+            <div>
+              <label for="nama_startup" class="block text-sm font-medium text-gray-700 mt-4">Nama startup</label>
+              <input type="text" name="nama_startup" id="nama_startup" placeholder="Nama Startup" required
+                class="mt-1 w-full rounded-lg border-gray-300 shadow-lg p-3">
+            </div>
+            <div>
+              <label for="Nama_founder" class="block text-sm font-medium text-gray-700 mt-4">Nama Founder</label>
+              <input type="text" name="Nama_founder" id="Nama_founder" placeholder="Enter Nama Founder" required
+                class="mt-1 w-full rounded-lg border-gray-300 shadow-lg p-3">
+            </div>
+            <div>
+              <label for="nomorHp" class="block text-sm font-medium text-gray-700 mt-4">Nomor Hp</label>
+              <input type="text" name="nomorHp" id="nomorHp" placeholder="Nomor Hp" required
+                class="mt-1 w-full rounded-lg border-gray-300 shadow-lg p-3">
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-700 mt-4">Email</label>
+              <input type="text" name="email" id="email" placeholder="Email" required
+                class="mt-1 w-full rounded-lg border-gray-300 shadow-lg p-3">
+            </div>
+            <div>
+              <label for="VisiMisi" class="block text-sm font-medium text-gray-700 mt-4">Visi Misi</label>
+              <input type="text" name="VisiMisi" id="VisiMisi" placeholder="Visi Misi" required
+                class="mt-1 w-full rounded-lg border-gray-300 shadow-lg p-3">
+            </div>
+            <div>
+              <label for="deskripsiStartUp" class="block text-sm font-medium text-gray-700 mt-4">Deskrip
+                Perusahaan</label>
+              <textarea type="text" name="deskripsiStartUp" id="deskripsiStartUp" placeholder="Deskrip Perusahaan"
+                required class="mt-1 w-full rounded-lg border-gray-300 shadow-lg p-3"></textarea>
+            </div>
+            <div>
+              <label for="password" class="block text-sm font-medium text-gray-700 mt-4">Password</label>
+              <input type="text" name="password" id="password" placeholder="Password" required
+                class="mt-1 w-full rounded-lg border-gray-300 shadow-lg p-3">
+            </div>
+            <!-- Remember Me + Forgot -->
+            <div class="flex items-center justify-between text-sm mt-8">
+              <label class="flex items-center">
+                <input type="checkbox" class="rounded border border-gray-300 text-blue-600 focus:ring-blue-500">
+                <span class="ml-2 text-gray-600">Remember me</span>
+              </label>
+              <a href="#" class="text-blue-600 hover:underline">Forgot password?</a>
+            </div>
+          </div>
+        </template>
       </div>
 
     </form>
