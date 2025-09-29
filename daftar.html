@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap"
+    rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Daftar Perusahaan Modern</title>
+  <style>
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #d1d5db;
+      border-radius: 10px;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: #9ca3af;
+    }
+  </style>
+</head>
+
+<body class="font-customFont bg-gray-50 overflow-hidden">
+
+  <div id="sidebar-overlay" class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden"></div>
+
+  <div class="flex h-screen text-gray-800">
+
+    <aside id="main-nav-sidebar"
+      class="fixed lg:static h-screen z-40 flex flex-col items-center bg-gray-900 text-gray-300 w-20 py-6 -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-in-out">
+      <a href="#" class="text-white font-bold text-2xl" title="Ignitor">
+        <img src="img/ignitor.jpg" alt="" class="rounded-full size-12">
+      </a>
+      <ul class="flex flex-col items-center gap-4 mt-12">
+        <li><a href="chatInvestor.html" class="p-3 block rounded-lg transition-transform duration-200 ease-in-out hover:scale-125"
+            title="Chat"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z">
+              </path>
+            </svg></a></li>
+        <li class="bg-gray-700 p-3 rounded-lg"><a href="#" class="text-white block" title="Home"><svg class="w-6 h-6"
+              fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
+              </path>
+            </svg></a></li>
+      </ul>
+    </aside>
+
+    <div class="flex-1 flex flex-col h-screen">
+      <header class="sticky top-0 w-full bg-white/80 backdrop-blur-sm shadow-sm z-20">
+        <div class="container mx-auto flex justify-between items-center p-4 text-gray-800">
+          <div class="flex items-center gap-4">
+            <button id="toggleMainNav" class="lg:hidden p-2 rounded-full hover:bg-gray-100">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                </path>
+              </svg>
+            </button>
+            <img src="img/ignitor.png" alt="" class="w-24">
+          </div>
+        </div>
+      </header>
+
+      <main class="flex-1 overflow-y-auto custom-scrollbar p-6 lg:p-8">
+        <div class="px-3">
+          <button onclick="toggleDropdown()" class="bg-primary text-white font-semibold px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-opacity-90 transition-colors">Kategori</button>
+          <ul id="dropdownKategori"
+            class="absolute hidden bg-white mt-2 rounded-lg shadow-lg w-40 p-2 z-50 border border-gray-100">
+            <li><a href="#" onclick="filterKategori('industri')"
+                class="block px-4 py-2 text-sm rounded-md hover:bg-gray-100">Industri</a></li>
+            <li><a href="#" onclick="filterKategori('jasa')"
+                class="block px-4 py-2 text-sm rounded-md hover:bg-gray-100">Jasa</a></li>
+            <li><a href="#" onclick="filterKategori('kecantikan')"
+                class="block px-4 py-2 text-sm rounded-md hover:bg-gray-100">Kecantikan</a></li>
+            <li><a href="#" onclick="filterKategori('all')"
+                class="block px-4 py-2 text-sm rounded-md hover:bg-gray-100">Tampilkan Semua</a></li>
+          </ul>
+        </div>
+        <div class="container mx-auto mt-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+            <!-- Kartu Perusahaan -->
+            <div
+              class="card industri bg-white shadow-md rounded-xl p-6 flex flex-col gap-4 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+              <div class="header flex items-center gap-4">
+                <img src="img/download (2).png" alt="logo"
+                  class="w-16 h-16 object-cover rounded-full border border-gray-200 p-1">
+                <div>
+                  <h1 class="text-xl font-semibold text-gray-900">Indofood</h1>
+                  <p class="text-sm text-gray-500">Perusahaan Industri Mie Instan</p>
+                </div>
+              </div>
+              <div class="keterangan text-gray-600 text-sm">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime veritatis laboriosam est vitae cum
+                  eius voluptates.</p>
+              </div>
+              <div class="kategori flex gap-2">
+                <span class="text-xs font-medium text-blue-800 bg-blue-100 px-2.5 py-1 rounded-full">Industri</span>
+                <span class="text-xs font-medium text-yellow-800 bg-yellow-100 px-2.5 py-1 rounded-full">Produk</span>
+              </div>
+              <div class="actions flex items-center gap-4 mt-auto pt-4 border-t border-gray-100">
+                <a href="#" class="text-sm font-medium text-primary hover:underline">Unduh Proposal</a>
+                <a href="chatInvestor.html" class="ml-auto"><button
+                    class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-opacity-90 transition-colors">Chat
+                    Sekarang</button></a>
+              </div>
+            </div>
+            <div
+              class="card jasa bg-white shadow-md rounded-xl p-6 flex flex-col gap-4 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+              <div class="header flex items-center gap-4">
+                <img src="img/download (2).png" alt="logo"
+                  class="w-16 h-16 object-cover rounded-full border border-gray-200 p-1">
+                <div>
+                  <h1 class="text-xl font-semibold text-gray-900">Nama Perusahaan Jasa</h1>
+                  <p class="text-sm text-gray-500">Deskripsi singkat perusahaan jasa</p>
+                </div>
+              </div>
+              <div class="keterangan text-gray-600 text-sm">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime veritatis laboriosam est vitae cum
+                  eius voluptates.</p>
+              </div>
+              <div class="kategori flex gap-2">
+                <span class="text-xs font-medium text-green-800 bg-green-100 px-2.5 py-1 rounded-full">Jasa</span>
+              </div>
+              <div class="actions flex items-center gap-4 mt-auto pt-4 border-t border-gray-100">
+                <a href="#" class="text-sm font-medium text-primary hover:underline">Unduh Proposal</a>
+                <a href="chatInvestor.html" class="ml-auto"><button
+                    class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-opacity-90 transition-colors">Chat
+                    Sekarang</button></a>
+              </div>
+            </div>
+
+            <div
+              class="card jasa bg-white shadow-md rounded-xl p-6 flex flex-col gap-4 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+              <div class="header flex items-center gap-4">
+                <img src="img/download (2).png" alt="logo"
+                  class="w-16 h-16 object-cover rounded-full border border-gray-200 p-1">
+                <div>
+                  <h1 class="text-xl font-semibold text-gray-900">Nama Perusahaan Jasa</h1>
+                  <p class="text-sm text-gray-500">Deskripsi singkat perusahaan jasa</p>
+                </div>
+              </div>
+              <div class="keterangan text-gray-600 text-sm">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime veritatis laboriosam est vitae cum
+                  eius voluptates.</p>
+              </div>
+              <div class="kategori flex gap-2">
+                <span class="text-xs font-medium text-green-800 bg-green-100 px-2.5 py-1 rounded-full">Jasa</span>
+              </div>
+              <div class="actions flex items-center gap-4 mt-auto pt-4 border-t border-gray-100">
+                <a href="#" class="text-sm font-medium text-primary hover:underline">Unduh Proposal</a>
+                <a href="chatInvestor.html" class="ml-auto"><button
+                    class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-opacity-90 transition-colors">Chat
+                    Sekarang</button></a>
+              </div>
+            </div>
+
+            <div
+              class="card jasa bg-white shadow-md rounded-xl p-6 flex flex-col gap-4 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+              <div class="header flex items-center gap-4">
+                <img src="img/download (2).png" alt="logo"
+                  class="w-16 h-16 object-cover rounded-full border border-gray-200 p-1">
+                <div>
+                  <h1 class="text-xl font-semibold text-gray-900">Nama Perusahaan Jasa</h1>
+                  <p class="text-sm text-gray-500">Deskripsi singkat perusahaan jasa</p>
+                </div>
+              </div>
+              <div class="keterangan text-gray-600 text-sm">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime veritatis laboriosam est vitae cum
+                  eius voluptates.</p>
+              </div>
+              <div class="kategori flex gap-2">
+                <span class="text-xs font-medium text-green-800 bg-green-100 px-2.5 py-1 rounded-full">Jasa</span>
+              </div>
+              <div class="actions flex items-center gap-4 mt-auto pt-4 border-t border-gray-100">
+                <a href="#" class="text-sm font-medium text-primary hover:underline">Unduh Proposal</a>
+                <a href="chatInvestor.html" class="ml-auto"><button
+                    class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-opacity-90 transition-colors">Chat
+                    Sekarang</button></a>
+              </div>
+            </div>
+
+            <div
+              class="card jasa bg-white shadow-md rounded-xl p-6 flex flex-col gap-4 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+              <div class="header flex items-center gap-4">
+                <img src="img/download (2).png" alt="logo"
+                  class="w-16 h-16 object-cover rounded-full border border-gray-200 p-1">
+                <div>
+                  <h1 class="text-xl font-semibold text-gray-900">Nama Perusahaan Jasa</h1>
+                  <p class="text-sm text-gray-500">Deskripsi singkat perusahaan jasa</p>
+                </div>
+              </div>
+              <div class="keterangan text-gray-600 text-sm">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime veritatis laboriosam est vitae cum
+                  eius voluptates.</p>
+              </div>
+              <div class="kategori flex gap-2">
+                <span class="text-xs font-medium text-green-800 bg-green-100 px-2.5 py-1 rounded-full">Jasa</span>
+              </div>
+              <div class="actions flex items-center gap-4 mt-auto pt-4 border-t border-gray-100">
+                <a href="#" class="text-sm font-medium text-primary hover:underline">Unduh Proposal</a>
+                <a href="chatInvestor.html" class="ml-auto"><button
+                    class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-opacity-90 transition-colors">Chat
+                    Sekarang</button></a>
+              </div>
+            </div>
+
+            <div
+              class="card jasa bg-white shadow-md rounded-xl p-6 flex flex-col gap-4 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+              <div class="header flex items-center gap-4">
+                <img src="img/download (2).png" alt="logo"
+                  class="w-16 h-16 object-cover rounded-full border border-gray-200 p-1">
+                <div>
+                  <h1 class="text-xl font-semibold text-gray-900">Nama Perusahaan Jasa</h1>
+                  <p class="text-sm text-gray-500">Deskripsi singkat perusahaan jasa</p>
+                </div>
+              </div>
+              <div class="keterangan text-gray-600 text-sm">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime veritatis laboriosam est vitae cum
+                  eius voluptates.</p>
+              </div>
+              <div class="kategori flex gap-2">
+                <span class="text-xs font-medium text-green-800 bg-green-100 px-2.5 py-1 rounded-full">Jasa</span>
+              </div>
+              <div class="actions flex items-center gap-4 mt-auto pt-4 border-t border-gray-100">
+                <a href="#" class="text-sm font-medium text-primary hover:underline">Unduh Proposal</a>
+                <a href="chatInvestor.html" class="ml-auto"><button
+                    class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-opacity-90 transition-colors">Chat
+                    Sekarang</button></a>
+              </div>
+            </div>
+
+            <div
+              class="card jasa bg-white shadow-md rounded-xl p-6 flex flex-col gap-4 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+              <div class="header flex items-center gap-4">
+                <img src="img/download (2).png" alt="logo"
+                  class="w-16 h-16 object-cover rounded-full border border-gray-200 p-1">
+                <div>
+                  <h1 class="text-xl font-semibold text-gray-900">Nama Perusahaan Jasa</h1>
+                  <p class="text-sm text-gray-500">Deskripsi singkat perusahaan jasa</p>
+                </div>
+              </div>
+              <div class="keterangan text-gray-600 text-sm">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime veritatis laboriosam est vitae cum
+                  eius voluptates.</p>
+              </div>
+              <div class="kategori flex gap-2">
+                <span class="text-xs font-medium text-green-800 bg-green-100 px-2.5 py-1 rounded-full">Jasa</span>
+              </div>
+              <div class="actions flex items-center gap-4 mt-auto pt-4 border-t border-gray-100">
+                <a href="#" class="text-sm font-medium text-primary hover:underline">Unduh Proposal</a>
+                <a href="chatInvestor.html" class="ml-auto"><button
+                    class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-opacity-90 transition-colors">Chat
+                    Sekarang</button></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    // --- SKRIP UNTUK SIDEBAR ---
+    const toggleMainNavBtn = document.getElementById('toggleMainNav');
+    const mainNavSidebar = document.getElementById('main-nav-sidebar');
+    const overlay = document.getElementById('sidebar-overlay');
+
+    function openMobileSidebar(sidebar) {
+      sidebar.classList.remove('-translate-x-full');
+      overlay.classList.remove('hidden');
+    }
+
+    function closeMobileSidebars() {
+      mainNavSidebar.classList.add('-translate-x-full');
+      overlay.classList.add('hidden');
+    }
+
+    toggleMainNavBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      openMobileSidebar(mainNavSidebar);
+    });
+
+    overlay.addEventListener('click', () => {
+      closeMobileSidebars();
+    });
+
+    function filterKategori(kategori) {
+      const cards = document.querySelectorAll('.card');
+      cards.forEach(card => {
+        if (kategori === 'all' || card.classList.contains(kategori)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    function toggleDropdown() {
+      document.getElementById("dropdownKategori").classList.toggle("hidden");
+    }
+
+    window.addEventListener('click', function (event) {
+      if (!event.target.matches('button')) {
+        var dropdowns = document.getElementsByClassName("absolute");
+        for (var i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (!openDropdown.classList.contains('hidden')) {
+            openDropdown.classList.add('hidden');
+          }
+        }
+      }
+    });
+
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'primary': '#00509D',
+            'secondary': '#00296B',
+            'third': '#FFD500',
+          },
+          fontFamily: {
+            customFont: ['"Figtree"', 'sans-serif']
+          }
+        },
+      },
+    }
+  </script>
+
+</body>
+
+</html>

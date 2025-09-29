@@ -14,159 +14,130 @@
 
 <body class="min-h-screen flex items-center justify-center bg-gradient-to-r py-12">
 
-  <div class="w-full max-w-md bg-white shadow-2xl rounded-2xl p-8">
-    <!-- Judul -->
-    <!-- ubah value pas login sama regis nya berubah untuk heading dan subheading  -->
-    <h2 class="text-3xl font-bold text-center text-blue-600 mb-6" id="headingForm">Welcome Back</h2>
-    <p class="text-center text-gray-500 mb-8" id="subHeadingForm">Login to continue</p>
+     <div class="w-full max-w-md bg-white shadow-2xl rounded-2xl p-8">
+        <!-- Judul -->
+        <h2 class="text-3xl font-bold text-center text-blue-600 mb-2" id="headingForm">Welcome Back</h2>
+        <p class="text-center text-gray-500 mb-8" id="subHeadingForm">Login to continue</p>
 
-    <!-- Form -->
-    <form action="#" id="formLogin" method="POST" class="space-y-5 block">
-      <!-- Username -->
-      <div>
-        <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
-        <input type="text" id="username" name="username" required
-          class="mt-1 w-full rounded-lg border-gray-300 shadow-lg focus:border-blue-500 focus:ring focus:ring-blue-200 p-3">
-      </div>
-
-      <!-- Email -->
-      <div>
-        <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-        <input type="email" id="email" name="email" required
-          class="mt-1 w-full rounded-lg border-gray-300 shadow-lg focus:border-blue-500 focus:ring focus:ring-blue-200 p-3">
-      </div>
-
-      <!-- Password -->
-      <div>
-        <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
-        <input type="password" id="password" name="password" required
-          class="mt-1 w-full rounded-lg border-gray-300 shadow-lg focus:border-blue-500 focus:ring focus:ring-blue-200 p-3">
-      </div>
-
-      <!-- Remember Me + Forgot -->
-      <div class="flex items-center justify-between text-sm">
-        <label class="flex items-center">
-          <input type="checkbox" class="rounded border border-gray-300 text-blue-600 focus:ring-blue-500">
-          <span class="ml-2 text-gray-600">Remember me</span>
-        </label>
-        <a href="#" class="text-blue-600 hover:underline">Forgot password?</a>
-      </div>
-
-      <!-- Tombol Login -->
-      <button type="submit"
-        class="w-full bg-blue-800 text-white py-3 px-4 rounded-lg font-medium hover:bg-blue-600 transition duration-300">
-        Login
-      </button>
-    </form>
-
-    <!-- tambahin regis jadi investor atau start up -->
-    <form action="#" id="formRegis" method="POST" class="hidden">
-      <div class="block" id="role-selection">
-        <label for="role" class="block text-sm font-medium text-gray-700">Register as</label>
-        <select id="role" name="role" required
-          class="mt-1 w-full rounded-lg border-gray-300 shadow-lg focus:border-blue-500 focus:ring focus:ring-blue-200 p-3">
-          <option value="" disabled selected>Select your role</option>
-          <option value="investor">Investor</option>
-          <option value="startup">Startup</option>
-        </select>
-
-        <button id="btnLanjut"
-          class="w-full bg-blue-800 text-white py-3 px-4 rounded-lg font-medium hover:bg-blue-600 transition duration-300 mt-8">
-          Continue
-        </button>
-      </div>
-      <div class="space-y-5" id="isiData">
-
-        <div id="dynamic-fields" class="space-y-5 mt-5">
-        </div>
-        <template id="investor">
-          <div>
-            <label for="fullname" class="block text-sm font-medium text-gray-700 mt-4">Full Name</label>
-            <input type="text" name="fullname" id="fullname" placeholder="Enter your full name" required
-              class="mt-1 w-full rounded-lg border-gray-300 shadow-lg p-3">
-          </div>
-          <div>
-            <label for="email" class="block text-sm font-medium text-gray-700 mt-4">Email</label>
-            <input type="email" name="email" id="email" placeholder="Your Email" required
-              class="mt-1 w-full rounded-lg border-gray-300 shadow-lg p-3">
-          </div>
-          <div>
-            <label for="password" class="block text-sm font-medium text-gray-700 mt-4">Password</label>
-            <input type="password" name="password" id="password" placeholder="Your Password" required
-              class="mt-1 w-full rounded-lg border-gray-300 shadow-lg p-3">
-          </div>
-          <!-- Remember Me + Forgot -->
-          <div class="flex items-center justify-between text-sm">
-            <label class="flex items-center">
-              <input type="checkbox" class="rounded border border-gray-300 text-blue-600 focus:ring-blue-500">
-              <span class="ml-2 text-gray-600">Remember me</span>
-            </label>
-            <a href="#" class="text-blue-600 hover:underline">Forgot password?</a>
-          </div>
-        </template>
-
-        <template id="startup">
-          <div class="w-full">
+        <!-- Form Login -->
+        <form action="/chatInvestor.html" id="formLogin" class="space-y-5 block">
+            <!-- Username -->
             <div>
-              <label for="nama_startup" class="block text-sm font-medium text-gray-700 mt-4">Nama startup</label>
-              <input type="text" name="nama_startup" id="nama_startup" placeholder="Nama Startup" required
-                class="mt-1 w-full rounded-lg border-gray-300 shadow-lg p-3">
+                <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
+                <input type="text" id="username" name="username" required
+                    class="mt-1 w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 p-3">
             </div>
+
+            <!-- Email -->
             <div>
-              <label for="Nama_founder" class="block text-sm font-medium text-gray-700 mt-4">Nama Founder</label>
-              <input type="text" name="Nama_founder" id="Nama_founder" placeholder="Enter Nama Founder" required
-                class="mt-1 w-full rounded-lg border-gray-300 shadow-lg p-3">
+                <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                <input type="email" id="email" name="email" required
+                    class="mt-1 w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 p-3">
             </div>
+
+            <!-- Password -->
             <div>
-              <label for="nomorHp" class="block text-sm font-medium text-gray-700 mt-4">Nomor Hp</label>
-              <input type="text" name="nomorHp" id="nomorHp" placeholder="Nomor Hp" required
-                class="mt-1 w-full rounded-lg border-gray-300 shadow-lg p-3">
+                <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                <input type="password" id="password" name="password" required
+                    class="mt-1 w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 p-3">
             </div>
-            <div>
-              <label for="email" class="block text-sm font-medium text-gray-700 mt-4">Email</label>
-              <input type="text" name="email" id="email" placeholder="Email" required
-                class="mt-1 w-full rounded-lg border-gray-300 shadow-lg p-3">
-            </div>
-            <div>
-              <label for="VisiMisi" class="block text-sm font-medium text-gray-700 mt-4">Visi Misi</label>
-              <input type="text" name="VisiMisi" id="VisiMisi" placeholder="Visi Misi" required
-                class="mt-1 w-full rounded-lg border-gray-300 shadow-lg p-3">
-            </div>
-            <div>
-              <label for="deskripsiStartUp" class="block text-sm font-medium text-gray-700 mt-4">Deskrip
-                Perusahaan</label>
-              <textarea type="text" name="deskripsiStartUp" id="deskripsiStartUp" placeholder="Deskrip Perusahaan"
-                required class="mt-1 w-full rounded-lg border-gray-300 shadow-lg p-3"></textarea>
-            </div>
-            <div>
-              <label for="password" class="block text-sm font-medium text-gray-700 mt-4">Password</label>
-              <input type="text" name="password" id="password" placeholder="Password" required
-                class="mt-1 w-full rounded-lg border-gray-300 shadow-lg p-3">
-            </div>
+
             <!-- Remember Me + Forgot -->
-            <div class="flex items-center justify-between text-sm mt-8">
-              <label class="flex items-center">
-                <input type="checkbox" class="rounded border border-gray-300 text-blue-600 focus:ring-blue-500">
-                <span class="ml-2 text-gray-600">Remember me</span>
-              </label>
-              <a href="#" class="text-blue-600 hover:underline">Forgot password?</a>
+            <div class="flex items-center justify-between text-sm">
+                <label class="flex items-center">
+                    <input type="checkbox" class="rounded border border-gray-300 text-blue-600 focus:ring-blue-500">
+                    <span class="ml-2 text-gray-600">Remember me</span>
+                </label>
+                <a href="#" class="text-blue-600 hover:underline">Lupa password?</a>
             </div>
-          </div>
-        </template>
-      </div>
 
-    </form>
+            <!-- Tombol Login -->
+            <button type="submit"
+                class="w-full bg-blue-700 text-white py-3 px-4 rounded-lg font-medium hover:bg-blue-800 transition duration-300">
+                Login
+            </button>
+        </form>
 
-    <!-- Link Register -->
-    <p id="btnRegis" class="text-center text-gray-600 mt-6 block">
-      Don’t have an account?
-      <button class="text-blue-600 font-medium hover:underline">Register</button>
-    </p>
-    <p id="btnLogin" class="text-center text-gray-600 mt-6 hidden">
-      Already have an account?
-      <button class="text-blue-600 font-medium hover:underline">Login</button>
-    </p>
-  </div>
+        <!-- Form Registrasi -->
+        <form id="formRegis" class="hidden">
+            <div class="block" id="role-selection">
+                <label for="role" class="block text-sm font-medium text-gray-700">Register as</label>
+                <select id="role" name="role" required
+                    class="mt-1 w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 p-3">
+                    <option value="" disabled selected>Pilih peran Anda</option>
+                    <option value="investor">Investor</option>
+                    <option value="startup">Startup</option>
+                </select>
+
+                <button id="btnLanjut"
+                    class="w-full bg-blue-700 text-white py-3 px-4 rounded-lg font-medium hover:bg-blue-800 transition duration-300 mt-8">
+                    Lanjut
+                </button>
+            </div>
+            
+            <div id="dynamic-fields-container" class="hidden">
+                <div id="dynamic-fields" class="space-y-5 mt-5">
+                </div>
+                 <button type="submit"
+                    class="w-full bg-blue-700 text-white py-3 px-4 rounded-lg font-medium hover:bg-blue-800 transition duration-300 mt-8">
+                    Register
+                </button>
+            </div>
+
+            <!-- Template untuk Investor -->
+            <template id="investor">
+                <div>
+                    <label for="fullname" class="block text-sm font-medium text-gray-700">Full Name</label>
+                    <input type="text" name="fullname" placeholder="Enter your full name" required
+                        class="mt-1 w-full rounded-lg border-gray-300 shadow-sm p-3">
+                </div>
+                <div>
+                    <label for="email-regis-investor" class="block text-sm font-medium text-gray-700">Email</label>
+                    <input type="email" name="email" placeholder="Your Email" required
+                        class="mt-1 w-full rounded-lg border-gray-300 shadow-sm p-3">
+                </div>
+                <div>
+                    <label for="password-regis-investor" class="block text-sm font-medium text-gray-700">Password</label>
+                    <input type="password" name="password" placeholder="Your Password" required
+                        class="mt-1 w-full rounded-lg border-gray-300 shadow-sm p-3">
+                </div>
+            </template>
+
+            <!-- Template untuk Startup -->
+            <template id="startup">
+                <div>
+                    <label for="nama_startup" class="block text-sm font-medium text-gray-700">Nama Startup</label>
+                    <input type="text" name="nama_startup" placeholder="Nama Startup" required
+                        class="mt-1 w-full rounded-lg border-gray-300 shadow-sm p-3">
+                </div>
+                <div>
+                    <label for="Nama_founder" class="block text-sm font-medium text-gray-700">Nama Founder</label>
+                    <input type="text" name="Nama_founder" placeholder="Enter Nama Founder" required
+                        class="mt-1 w-full rounded-lg border-gray-300 shadow-sm p-3">
+                </div>
+                 <div>
+                    <label for="email-regis-startup" class="block text-sm font-medium text-gray-700">Email</label>
+                    <input type="email" name="email" placeholder="Email" required
+                        class="mt-1 w-full rounded-lg border-gray-300 shadow-sm p-3">
+                </div>
+                <div>
+                    <label for="password-regis-startup" class="block text-sm font-medium text-gray-700">Password</label>
+                    <input type="password" name="password" placeholder="Password" required
+                        class="mt-1 w-full rounded-lg border-gray-300 shadow-sm p-3">
+                </div>
+            </template>
+        </form>
+
+        <!-- Link untuk beralih antara Login dan Register -->
+        <p id="btnRegis" class="text-center text-gray-600 mt-6 block">
+            Belum punya akun?
+            <button class="text-blue-600 font-medium hover:underline">Register</button>
+        </p>
+        <p id="btnLogin" class="text-center text-gray-600 mt-6 hidden">
+            Sudah punya akun?
+            <button class="text-blue-600 font-medium hover:underline">Login</button>
+        </p>
+    </div>
 
 </body>
 

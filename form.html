@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Formulir Profil Perusahaan</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap"
+    rel="stylesheet">
+  <style>
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #d1d5db;
+      border-radius: 10px;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: #9ca3af;
+    }
+
+    /* Menambahkan penanda bintang (*) untuk input yang wajib diisi */
+    label:has(+ input[required])::after,
+    label:has(+ textarea[required])::after,
+    label:has(+ select[required])::after {
+      content: " *";
+      color: #ef4444;
+      /* red-500 */
+    }
+  </style>
+</head>
+
+<body class="font-sans bg-gray-100 overflow-hidden">
+
+  <!-- Overlay/latar belakang saat menu mobile terbuka -->
+  <div id="sidebar-overlay" class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden"></div>
+
+  <!-- Wrapper Utama -->
+  <div class="flex h-screen text-gray-800">
+
+    <!-- 1. Sidebar Navigasi Ikon -->
+    <aside id="main-nav-sidebar"
+      class="fixed lg:static h-screen z-40 flex flex-col items-center bg-gray-900 text-gray-300 w-20 py-6 -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-in-out">
+      <a href="#" class="text-white font-bold text-2xl" title="Ignitor">
+        <img src="img/ignitor.jpg" alt="" class="rounded-full size-12">
+      </a>
+      <ul class="flex flex-col items-center gap-4 mt-12">
+        <li><a href="chatPerusahaan.html"
+            class="p-3 block rounded-lg transition-transform duration-200 ease-in-out hover:scale-125" title="Chat"><svg
+              class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z">
+              </path>
+            </svg></a></li>
+        <li class="bg-gray-700 p-3 rounded-lg"><a href="#" class="text-white block" title="Formulir"><svg
+              class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+              </path>
+            </svg></a></li>
+      </ul>
+    </aside>
+
+    <div class="flex-1 flex flex-col h-screen">
+      <header class="sticky top-0 w-full bg-white/80 backdrop-blur-sm shadow-sm z-20">
+        <div class="container mx-auto flex items-center p-4 text-gray-800">
+          <button id="toggleMainNav" class="lg:hidden p-2 rounded-full hover:bg-gray-100 mr-4">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+          <h1 class="text-xl font-bold text-gray-900">Formulir Profil Perusahaan</h1>
+        </div>
+      </header>
+
+      <main class="flex-1 overflow-y-auto custom-scrollbar p-6 lg:p-8">
+        <div class="max-w-4xl mx-auto">
+          <div class="bg-white p-8 rounded-xl shadow-lg">
+            <h2 class="text-2xl font-bold text-gray-800 mb-2">Profil Perusahaan</h2>
+            <p class="text-gray-500 mb-8">Lengkapi detail di bawah ini untuk membuat profil perusahaan Anda.</p>
+
+            <form>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+
+                <div class="md:col-span-2">
+                  <label for="nama-perusahaan" class="block mb-2 font-semibold text-gray-700">Nama Perusahaan</label>
+                  <input type="text" id="nama-perusahaan"
+                    class="w-full border border-gray-300 p-3 rounded-lg text-sm transition duration-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 focus:outline-none"
+                    required />
+                </div>
+
+                <div class="md:col-span-2">
+                  <label for="kategori" class="block mb-2 font-semibold text-gray-700">Kategori Perusahaan</label>
+                  <select id="kategori"
+                    class="w-full border border-gray-300 p-3 rounded-lg text-sm transition duration-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 focus:outline-none"
+                    required>
+                    <option value="">-- Pilih Kategori --</option>
+                    <option value="industri">Industri</option>
+                    <option value="produk">Produk</option>
+                    <option value="kecantikan">Kecantikan</option>
+                    <option value="makanan">Makanan</option>
+                    <option value="otomotif">Otomotif</option>
+                    <option value="jasa">Jasa</option>
+                  </select>
+                </div>
+
+                <div class="md:col-span-2">
+                  <label for="deskripsi" class="block mb-2 font-semibold text-gray-700">Deskripsi Singkat</label>
+                  <textarea id="deskripsi"
+                    class="w-full border border-gray-300 p-3 rounded-lg text-sm transition duration-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 focus:outline-none resize-y min-h-[100px]"
+                    required placeholder="Tuliskan deskripsi singkat perusahaan..."></textarea>
+                </div>
+
+                <div>
+                  <label for="logo" class="block mb-2 font-semibold text-gray-700">Logo Perusahaan</label>
+                  <input type="file" id="logo" accept="image/*"
+                    class="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
+                    required />
+                </div>
+
+                <div>
+                  <label for="proposal" class="block mb-2 font-semibold text-gray-700">Dokumen Proposal</label>
+                  <input type="file" id="proposal" accept=".pdf,.doc,.docx"
+                    class="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
+                    required />
+                </div>
+
+                <div class="md:col-span-2">
+                  <label for="tujuan-dana" class="block mb-2 font-semibold text-gray-700">Tujuan Alokasi Dana</label>
+                  <textarea id="tujuan-dana"
+                    class="w-full border border-gray-300 p-3 rounded-lg text-sm transition duration-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 focus:outline-none resize-y min-h-[100px]"
+                    required placeholder="Jelaskan secara rinci bagaimana dana akan digunakan..."></textarea>
+                </div>
+
+              </div>
+
+              <div class="flex justify-end pt-6 border-t border-gray-200 mt-8">
+                <button type="submit"
+                  class="bg-blue-700 text-white py-3 px-6 rounded-lg font-bold hover:bg-blue-800 transition-colors duration-300">Kirim
+                  Profil</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    const toggleMainNavBtn = document.getElementById('toggleMainNav');
+    const mainNavSidebar = document.getElementById('main-nav-sidebar');
+    const overlay = document.getElementById('sidebar-overlay');
+
+    function openMobileSidebar(sidebar) {
+      sidebar.classList.remove('-translate-x-full');
+      overlay.classList.remove('hidden');
+    }
+
+    function closeMobileSidebars() {
+      mainNavSidebar.classList.add('-translate-x-full');
+      overlay.classList.add('hidden');
+    }
+
+    toggleMainNavBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      openMobileSidebar(mainNavSidebar);
+    });
+
+    overlay.addEventListener('click', () => {
+      closeMobileSidebars();
+    });
+  </script>
+
+</body>
+
+</html>

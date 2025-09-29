@@ -137,45 +137,63 @@ btnLogin.addEventListener('click', function(){
 })
 
 document.addEventListener('DOMContentLoaded', () => {
-  const roleSelect = document.getElementById('role');
-  const dynamicFields = document.getElementById('dynamic-fields');
-  const btnLanjut = document.getElementById('btnLanjut');
-  const roleSelection = document.getElementById('role-selection');
+    const roleSelect = document.getElementById('role');
+    const dynamicFields = document.getElementById('dynamic-fields');
+    const dynamicFieldsContainer = document.getElementById('dynamic-fields-container');
+    const roleSelection = document.getElementById('role-selection');
 
-  function createSubmitButton() {
-    const button = document.createElement('button');
-    button.type = 'submit';
-    button.className = 'w-full bg-blue-800 text-white py-3 px-4 rounded-lg font-medium hover:bg-blue-600 transition duration-300 mt-8';
-    button.textContent = 'Register';
-    return button;
-  }
+    btnRegis.addEventListener('click', function() {
+        headingForm.innerText = "Create Your Account";
+        subHeadingForm.innerText = "Please fill in the form to continue";
 
-  btnLanjut.addEventListener('click', (event) => {
-    event.preventDefault(); 
+        btnRegis.classList.replace('block', 'hidden');
+        btnLogin.classList.replace('hidden', 'block');
 
-    const selectedRole = roleSelect.value;
+        formLogin.classList.replace('block', 'hidden');
+        formRegis.classList.replace('hidden', 'block');
+    });
 
-    if (!selectedRole) {
-      alert('Please select a role to continue.');
-      return; 
-    }
+    btnLogin.addEventListener('click', function() {
+        headingForm.innerText = "Welcome Back";
+        subHeadingForm.innerText = "Login to continue";
 
-    const templateId = selectedRole;
-    const template = document.getElementById(templateId);
+        btnRegis.classList.replace('hidden', 'block');
+        btnLogin.classList.replace('block', 'hidden');
 
-    if (template) {
-      const clone = template.content.cloneNode(true);
+        formLogin.classList.replace('hidden', 'block');
+        formRegis.classList.replace('block', 'hidden');
+    });
 
-      dynamicFields.appendChild(clone);
+    btnLanjut.addEventListener('click', (event) => {
+        event.preventDefault(); 
 
-      const submitButton = createSubmitButton();
-      dynamicFields.appendChild(submitButton);
+        const selectedRole = roleSelect.value;
+        
+        if (!selectedRole) {
+            alert('Silakan pilih peran untuk melanjutkan.');
+            return;
+        }
 
-      roleSelection.style.display = 'none';
-    } else {
-      console.error('Template not found for role:', selectedRole);
-    }
-  });
+        if (selectedRole === 'investor') {
+            formRegis.action = 'chatInvestor.html';
+        } else if (selectedRole === 'startup') {
+            formRegis.action = 'chatPerusahaan.html';
+        }
+
+        const template = document.getElementById(selectedRole);
+
+        if (template) {
+            dynamicFields.innerHTML = ''; 
+            
+            const clone = template.content.cloneNode(true);
+            dynamicFields.appendChild(clone);
+
+            roleSelection.style.display = 'none';
+            dynamicFieldsContainer.style.display = 'block';
+        } else {
+            console.error('Template tidak ditemukan untuk peran:', selectedRole);
+        }
+    });
 });
 
 document.addEventListener('DOMContentLoaded', () => {
