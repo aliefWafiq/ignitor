@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap"
     rel="stylesheet">
   <style>
-    /* Custom scrollbar for better aesthetics */
+
     .custom-scrollbar::-webkit-scrollbar {
       width: 6px;
     }
@@ -33,16 +33,12 @@
 
 <body class="font-sans bg-gray-100 overflow-hidden">
 
-  <!-- Overlay/latar belakang saat menu mobile terbuka -->
   <div id="sidebar-overlay" class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden"></div>
 
-  <!-- Wrapper Utama -->
   <div class="flex h-screen text-gray-800">
 
-    <!-- 1. Sidebar Navigasi Ikon -->
     <aside id="main-nav-sidebar"
       class="fixed lg:static h-screen z-40 flex flex-col items-center bg-gray-900 text-gray-300 w-20 py-6 -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-in-out">
-      <!-- PERUBAHAN: Logo 'I' sekarang menjadi tombol untuk membuka panel bio -->
       <a href="#" class="text-white font-bold text-2xl" title="Ignitor">
         <img src="img/ignitor.jpg" alt="" class="rounded-full size-12">
       </a>
@@ -63,18 +59,16 @@
       </ul>
     </aside>
 
-    <!-- 2. Daftar Chat -->
     <div id="chat-list-panel"
       class="w-full lg:w-96 bg-white border-r border-gray-200 flex flex-col h-screen fixed lg:static z-40 -translate-x-full lg:translate-x-0 transition-transform duration-300">
-      <!-- Header Daftar Chat -->
+
       <div class="p-4 border-b">
         <input type="text"
           class="w-full px-4 py-2 text-sm bg-gray-100 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"
           placeholder="Search here...">
       </div>
-      <!-- Konten Daftar Chat dengan Scroll -->
+
       <div class="flex-1 overflow-y-auto custom-scrollbar p-4">
-        <!-- Favorites -->
         <div class="mb-6">
           <h6 class="text-sm font-semibold text-gray-500 mb-3">Favorites</h6>
           <div class="flex items-center gap-3">
@@ -88,7 +82,7 @@
               class="w-12 h-12 rounded-full object-cover cursor-pointer" alt="fav 4">
           </div>
         </div>
-        <!-- Daftar Chat -->
+
         <h6 class="text-sm font-semibold text-gray-500 mb-3">My Chat List</h6>
         <div class="space-y-2">
           <a href="#" class="flex items-center gap-3 p-3 bg-blue-50 rounded-lg">
@@ -119,14 +113,13 @@
       </div>
     </div>
 
-    <!-- 3. Kotak Chat & Panel Bio -->
     <main class="flex-1 flex">
-      <!-- 3a. Kotak Chat Utama -->
+
       <div class="flex-1 flex flex-col h-screen">
-        <!-- Header Chat -->
+
         <div class="flex items-center justify-between p-3 border-b bg-white">
           <div class="flex items-center gap-3">
-            <!-- Tombol hamburger baru untuk membuka sidebar utama di mobile -->
+
             <button id="toggleMainNav" class="lg:hidden p-2 rounded-full hover:bg-gray-100">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg">
@@ -140,7 +133,7 @@
               <div class="font-bold">Perusahaan A</div><small class="text-green-500">online</small>
             </div>
           </div>
-          <!-- Tombol Aksi Kanan (Toggle untuk mobile) -->
+
           <div class="flex items-center gap-2">
             <button id="toggleChatList" class="lg:hidden p-2 rounded-full hover:bg-gray-100">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -156,7 +149,6 @@
           </div>
         </div>
 
-        <!-- Area Pesan -->
         <div class="flex-1 p-6 space-y-6 overflow-y-auto custom-scrollbar">
           <div class="flex items-start gap-3">
             <img src="https://placehold.co/40x40/0284C7/FFFFFF?text=A" alt="Jane"
@@ -184,7 +176,6 @@
           </div>
         </div>
 
-        <!-- Input Pesan -->
         <div class="p-4 bg-white border-t">
           <div class="flex items-center gap-2"><input type="text" placeholder="Type a message..."
               class="flex-1 px-4 py-2 text-sm bg-gray-100 rounded-full focus:outline-none"><button
@@ -193,8 +184,6 @@
         </div>
       </div>
 
-      <!-- 3b. Panel Bio -->
-      <!-- PERUBAHAN: Dibuat 'fixed' untuk mobile, 'static' untuk desktop, dan z-index dinaikkan -->
       <div id="bio-panel"
         class="w-80 md:w-96 bg-white border-l p-6 flex flex-col h-screen fixed lg:static top-0 right-0 z-40 translate-x-full lg:translate-x-0 transition-transform duration-300">
         <div class="flex-1 overflow-y-auto custom-scrollbar">
@@ -249,7 +238,7 @@
     const toggleMainNavBtn = document.getElementById('toggleMainNav');
     const mainNavSidebar = document.getElementById('main-nav-sidebar');
     const overlay = document.getElementById('sidebar-overlay');
-    // PERUBAHAN: Menambahkan variabel untuk tombol bio di navigasi utama
+
     const toggleBioFromNavBtn = document.getElementById('toggle-bio-from-nav');
 
     function openMobileSidebar(sidebar) {
@@ -257,7 +246,6 @@
       overlay.classList.remove('hidden');
     }
 
-    // PERUBAHAN: Fungsi openBioPanel khusus untuk membuka panel bio
     function openBioPanel() {
       bioPanel.classList.remove('translate-x-full');
       overlay.classList.remove('hidden');
@@ -266,7 +254,7 @@
     function closeMobileSidebars() {
       mainNavSidebar.classList.add('-translate-x-full');
       chatListPanel.classList.add('-translate-x-full');
-      // PERUBAHAN: Panel bio ditutup dengan translate ke kanan
+
       bioPanel.classList.add('translate-x-full');
       overlay.classList.add('hidden');
     }
@@ -281,17 +269,15 @@
       openMobileSidebar(mainNavSidebar);
     });
 
-    // PERUBAHAN: Tombol info di header juga membuka panel bio
     toggleBioBtn.addEventListener('click', (e) => {
       e.stopPropagation();
       openBioPanel();
     });
 
-    // PERUBAHAN: Tombol 'I' di navigasi utama menutup navigasi dan membuka bio
     toggleBioFromNavBtn.addEventListener('click', (e) => {
-      e.preventDefault(); // Mencegah link default
+      e.preventDefault(); 
       e.stopPropagation();
-      if (window.innerWidth < 1024) { // Hanya berlaku di mobile
+      if (window.innerWidth < 1024) { 
         mainNavSidebar.classList.add('-translate-x-full');
         openBioPanel();
       }

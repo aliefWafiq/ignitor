@@ -42,8 +42,9 @@
         <img src="img/ignitor.jpg" alt="" class="rounded-full size-12">
       </a>
       <ul class="flex flex-col items-center gap-4 mt-12">
-        <li><a href="chatInvestor.html" class="p-3 block rounded-lg transition-transform duration-200 ease-in-out hover:scale-125"
-            title="Chat"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <li><a href="chatInvestor.html"
+            class="p-3 block rounded-lg transition-transform duration-200 ease-in-out hover:scale-125" title="Chat"><svg
+              class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z">
               </path>
@@ -70,27 +71,58 @@
             </button>
             <img src="img/ignitor.png" alt="" class="w-24">
           </div>
+
+          <div class="relative w-full max-w-xs hidden sm:block">
+            <input type="search" id="search-bar" placeholder="Cari perusahaan..."
+              class="w-full pl-10 pr-4 py-2 text-sm border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-300">
+            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+              <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+              </svg>
+            </div>
+          </div>
         </div>
       </header>
 
       <main class="flex-1 overflow-y-auto custom-scrollbar p-6 lg:p-8">
-        <div class="px-3">
-          <button onclick="toggleDropdown()" class="bg-primary text-white font-semibold px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-opacity-90 transition-colors">Kategori</button>
-          <ul id="dropdownKategori"
-            class="absolute hidden bg-white mt-2 rounded-lg shadow-lg w-40 p-2 z-50 border border-gray-100">
-            <li><a href="#" onclick="filterKategori('industri')"
-                class="block px-4 py-2 text-sm rounded-md hover:bg-gray-100">Industri</a></li>
-            <li><a href="#" onclick="filterKategori('jasa')"
-                class="block px-4 py-2 text-sm rounded-md hover:bg-gray-100">Jasa</a></li>
-            <li><a href="#" onclick="filterKategori('kecantikan')"
-                class="block px-4 py-2 text-sm rounded-md hover:bg-gray-100">Kecantikan</a></li>
-            <li><a href="#" onclick="filterKategori('all')"
-                class="block px-4 py-2 text-sm rounded-md hover:bg-gray-100">Tampilkan Semua</a></li>
-          </ul>
+        <div class="flex items-center gap-4 px-3 mb-6">
+          <div class="relative">
+            <button onclick="toggleDropdown()"
+              class="bg-primary text-white font-semibold px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-opacity-90 transition-colors">
+              Kategori
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <ul id="dropdownKategori"
+              class="absolute hidden bg-white mt-2 rounded-lg shadow-lg w-40 p-2 z-50 border border-gray-100">
+              <li><a href="#" onclick="filterKategori('industri')"
+                  class="block px-4 py-2 text-sm rounded-md hover:bg-gray-100">Industri</a></li>
+              <li><a href="#" onclick="filterKategori('jasa')"
+                  class="block px-4 py-2 text-sm rounded-md hover:bg-gray-100">Jasa</a></li>
+              <li><a href="#" onclick="filterKategori('kecantikan')"
+                  class="block px-4 py-2 text-sm rounded-md hover:bg-gray-100">Kecantikan</a></li>
+              <li><a href="#" onclick="filterKategori('all')"
+                  class="block px-4 py-2 text-sm rounded-md hover:bg-gray-100">Tampilkan Semua</a></li>
+            </ul>
+          </div>
+
+          <div class="relative w-full sm:hidden">
+            <input type="search" id="search-bar-mobile" placeholder="Cari perusahaan..."
+              class="w-full pl-10 pr-4 py-2 text-sm border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-300">
+            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+              <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+              </svg>
+            </div>
+          </div>
         </div>
+
         <div class="container mx-auto mt-4">
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8">
-            <!-- Kartu Perusahaan -->
+
             <div
               class="card industri bg-white shadow-md rounded-xl p-6 flex flex-col gap-4 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
               <div class="header flex items-center gap-4">
@@ -116,13 +148,14 @@
                     Sekarang</button></a>
               </div>
             </div>
+
             <div
               class="card jasa bg-white shadow-md rounded-xl p-6 flex flex-col gap-4 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
               <div class="header flex items-center gap-4">
                 <img src="img/download (2).png" alt="logo"
                   class="w-16 h-16 object-cover rounded-full border border-gray-200 p-1">
                 <div>
-                  <h1 class="text-xl font-semibold text-gray-900">Nama Perusahaan Jasa</h1>
+                  <h1 class="text-xl font-semibold text-gray-900">Perusahaan Jasa ABC</h1>
                   <p class="text-sm text-gray-500">Deskripsi singkat perusahaan jasa</p>
                 </div>
               </div>
@@ -147,7 +180,7 @@
                 <img src="img/download (2).png" alt="logo"
                   class="w-16 h-16 object-cover rounded-full border border-gray-200 p-1">
                 <div>
-                  <h1 class="text-xl font-semibold text-gray-900">Nama Perusahaan Jasa</h1>
+                  <h1 class="text-xl font-semibold text-gray-900">Perusahaan Jasa ABC</h1>
                   <p class="text-sm text-gray-500">Deskripsi singkat perusahaan jasa</p>
                 </div>
               </div>
@@ -172,7 +205,7 @@
                 <img src="img/download (2).png" alt="logo"
                   class="w-16 h-16 object-cover rounded-full border border-gray-200 p-1">
                 <div>
-                  <h1 class="text-xl font-semibold text-gray-900">Nama Perusahaan Jasa</h1>
+                  <h1 class="text-xl font-semibold text-gray-900">Perusahaan Jasa ABC</h1>
                   <p class="text-sm text-gray-500">Deskripsi singkat perusahaan jasa</p>
                 </div>
               </div>
@@ -197,7 +230,7 @@
                 <img src="img/download (2).png" alt="logo"
                   class="w-16 h-16 object-cover rounded-full border border-gray-200 p-1">
                 <div>
-                  <h1 class="text-xl font-semibold text-gray-900">Nama Perusahaan Jasa</h1>
+                  <h1 class="text-xl font-semibold text-gray-900">Perusahaan Jasa ABC</h1>
                   <p class="text-sm text-gray-500">Deskripsi singkat perusahaan jasa</p>
                 </div>
               </div>
@@ -222,7 +255,7 @@
                 <img src="img/download (2).png" alt="logo"
                   class="w-16 h-16 object-cover rounded-full border border-gray-200 p-1">
                 <div>
-                  <h1 class="text-xl font-semibold text-gray-900">Nama Perusahaan Jasa</h1>
+                  <h1 class="text-xl font-semibold text-gray-900">Perusahaan Jasa ABC</h1>
                   <p class="text-sm text-gray-500">Deskripsi singkat perusahaan jasa</p>
                 </div>
               </div>
@@ -247,7 +280,7 @@
                 <img src="img/download (2).png" alt="logo"
                   class="w-16 h-16 object-cover rounded-full border border-gray-200 p-1">
                 <div>
-                  <h1 class="text-xl font-semibold text-gray-900">Nama Perusahaan Jasa</h1>
+                  <h1 class="text-xl font-semibold text-gray-900">Perusahaan Jasa ABC</h1>
                   <p class="text-sm text-gray-500">Deskripsi singkat perusahaan jasa</p>
                 </div>
               </div>
@@ -272,7 +305,6 @@
   </div>
 
   <script>
-    // --- SKRIP UNTUK SIDEBAR ---
     const toggleMainNavBtn = document.getElementById('toggleMainNav');
     const mainNavSidebar = document.getElementById('main-nav-sidebar');
     const overlay = document.getElementById('sidebar-overlay');
@@ -312,16 +344,35 @@
     }
 
     window.addEventListener('click', function (event) {
-      if (!event.target.matches('button')) {
-        var dropdowns = document.getElementsByClassName("absolute");
-        for (var i = 0; i < dropdowns.length; i++) {
-          var openDropdown = dropdowns[i];
-          if (!openDropdown.classList.contains('hidden')) {
-            openDropdown.classList.add('hidden');
-          }
+      // Pastikan yang diklik bukan tombol dropdown
+      if (!event.target.closest('button') || !event.target.closest('button').onclick?.toString().includes('toggleDropdown')) {
+        const dropdown = document.getElementById("dropdownKategori");
+        if (!dropdown.classList.contains('hidden')) {
+          dropdown.classList.add('hidden');
         }
       }
     });
+
+    function handleSearch(query) {
+      const lowerCaseQuery = query.toLowerCase();
+      const cards = document.querySelectorAll('.card');
+
+      cards.forEach(card => {
+        const companyName = card.querySelector('h1').textContent.toLowerCase();
+        if (companyName.includes(lowerCaseQuery)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    const searchInput = document.getElementById('search-bar');
+    const searchInputMobile = document.getElementById('search-bar-mobile');
+
+    searchInput.addEventListener('keyup', (e) => handleSearch(e.target.value));
+    searchInputMobile.addEventListener('keyup', (e) => handleSearch(e.target.value));
+
 
     tailwind.config = {
       theme: {
